@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SharedMovement : MonoBehaviour
 {
-    public float playerSpeed;
+    public float playerWalkSpeed;
+    public float playerRunSpeed;
+    private float playerSpeed;
+
     public float jumpHeight;
     public float gravityValue;
 
@@ -18,6 +21,8 @@ public class SharedMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        selectSpeed();
+
         groundedPlayer = controller.isGrounded;
 
         if (groundedPlayer)
@@ -51,5 +56,17 @@ public class SharedMovement : MonoBehaviour
         // Move
         Vector3 finalMove = move * playerSpeed + Vector3.up * playerVelocity.y;
         controller.Move(finalMove * Time.deltaTime);
+    }
+
+    void selectSpeed()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            playerSpeed = playerRunSpeed;
+        }
+        else
+        {
+            playerSpeed = playerWalkSpeed;
+        }
     }
 }
