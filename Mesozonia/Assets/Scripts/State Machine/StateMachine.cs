@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StateMachine
 {
-    private IState currentState;
+    private static IState currentState;
 
     public void ChangeState(IState newState)
     {
@@ -15,6 +15,7 @@ public class StateMachine
     //It exits and enters the new state
     public void Update()
     {
-        currentState?.Exit();
+        currentState.Update();
+        //currentState?.Exit();
     }
 }

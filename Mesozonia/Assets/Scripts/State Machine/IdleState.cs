@@ -15,7 +15,11 @@ public class IdleState : IState
 
     public void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            //player.stateMachine.ChangeState();
+            Debug.Log("mmiau");
+        }
     }
     public void Exit()
     {
