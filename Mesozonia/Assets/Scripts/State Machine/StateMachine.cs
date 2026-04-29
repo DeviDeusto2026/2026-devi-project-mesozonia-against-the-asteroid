@@ -6,12 +6,15 @@ public class StateMachine
 
     public void ChangeState(IState newState)
     {
-        if (currentState != null)
-        {
-            //The same as doing "if (currentState != null) {currentStateExit();}"
-            currentState?.Exit();
-            currentState = newState;
-            currentState.Enter();
-        }
+     //The same as doing "if (currentState != null) {currentStateExit();}"
+        currentState?.Exit();
+        currentState = newState;
+        currentState.Enter();
+    }
+
+    //It exits and enters the new state
+    public void Update()
+    {
+        currentState?.Exit();
     }
 }
