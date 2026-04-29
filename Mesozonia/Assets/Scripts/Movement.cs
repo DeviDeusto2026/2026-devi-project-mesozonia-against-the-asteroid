@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class Movement
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public StateMachine stateMachine;
 
-    // Update is called once per frame
-    void Update()
+    public Movement()
     {
-        
+        stateMachine = new StateMachine();
     }
 }
