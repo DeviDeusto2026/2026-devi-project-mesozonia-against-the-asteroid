@@ -1,16 +1,27 @@
 using UnityEngine;
 
-public class IdleState : MonoBehaviour
+public class IdleState : IState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public IdleState()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Enter()
     {
-        
+        Debug.Log("IdleState Entrado");
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("mmiau");
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int) STATES.WALK]);
+        }
+    }
+    public void Exit()
+    {
+        Debug.Log("IdleState Salido");
     }
 }
