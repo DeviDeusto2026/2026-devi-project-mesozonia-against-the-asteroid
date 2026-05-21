@@ -1,8 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StateMachine
 {
-    private static IState currentState;
+    private IState currentState;
+
+    public StateMachine(IState currentState)
+    {
+        this.currentState = currentState;
+    }
 
     public void ChangeState(IState newState)
     {
@@ -15,7 +21,13 @@ public class StateMachine
     //It exits and enters the new state
     public void Update()
     {
-        currentState.Update();
+        Debug.Log(this.currentState);
+        GetState().Update();
         //currentState?.Exit();
+    }
+
+    public IState GetState()
+    {
+        return this.currentState;
     }
 }

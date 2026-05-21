@@ -14,9 +14,8 @@ public class Movement
     public Vector3 playerVelocity;
     private bool groundedPlayer;
 
-    public Movement(GameObject player, StateMachine stateMachine)
+    public Movement(GameObject player)
     {
-        this.stateMachine = stateMachine;
         playerWalkSpeed = 3;
         playerRunSpeed = 5;
 

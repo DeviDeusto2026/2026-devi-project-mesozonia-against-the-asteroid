@@ -1,23 +1,22 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class StartingOfScene : MonoBehaviour
 {
-    private GameObject player;
-    private Movement mv;
-    private StateMachine stateMachine;
+    public string playerNameFile;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = this.gameObject;
-        stateMachine = new StateMachine();
-        mv = new Movement(player, stateMachine);
+        StaticStates.InitializeStaticStates(playerNameFile);
 
-        mv.stateMachine.ChangeState(new IdleState(mv));
     }
 
     private void Update()
     {
-       stateMachine.Update();
+        StaticStates.stateMachine.GetState().Update();
     }
 }

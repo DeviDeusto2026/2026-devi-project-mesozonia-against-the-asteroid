@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class IdleState : IState
 {
-    private Movement player;
-    public IdleState(Movement player)
+    public IdleState()
     {
-        this.player = player;
+
     }
 
     public void Enter()
@@ -17,12 +16,12 @@ public class IdleState : IState
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            //player.stateMachine.ChangeState();
             Debug.Log("mmiau");
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int) STATES.WALK]);
         }
     }
     public void Exit()
     {
-
+        Debug.Log("IdleState Salido");
     }
 }
