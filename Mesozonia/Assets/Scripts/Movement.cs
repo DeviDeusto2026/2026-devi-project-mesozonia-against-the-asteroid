@@ -18,8 +18,8 @@ public class Movement
 
     public Movement(GameObject player, List<InputActionReference> inputReferences)
     {
-        playerWalkSpeed = 3;
-        playerRunSpeed = 5;
+        playerWalkSpeed = 5;
+        playerRunSpeed = 8;
 
         jumpHeight = 3;
         gravityValue = -9.8f;

@@ -3,7 +3,7 @@
     "name": "PlayerActions",
     "maps": [
         {
-            "name": "MovementDryp",
+            "name": "GeneralActions",
             "id": "5982c0ae-5e62-49b9-ba43-b92967265449",
             "actions": [
                 {

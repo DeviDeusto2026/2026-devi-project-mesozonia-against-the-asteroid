@@ -20,8 +20,6 @@ public class StartingOfScene : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(movingDirection.action.IsPressed());
-        Debug.Log("-----" +movingDirection.action.ReadValue<Vector2>());
         StaticStates.stateMachine.GetState().Update();
     }
 }

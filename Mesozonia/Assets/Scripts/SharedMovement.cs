@@ -2,13 +2,6 @@ using UnityEngine;
 
 public class SharedMovement
 {
-    public static float playerWalkSpeed;
-    public static float playerRunSpeed;
-    private static float playerSpeed;
-
-    public static float jumpHeight;
-    public static float gravityValue;
-
     public static CharacterController controller;
     public static Vector3 playerVelocity;
     public static Vector2 movingDirection;
@@ -17,14 +10,14 @@ public class SharedMovement
 
     static void selectSpeed()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            playerSpeed = playerRunSpeed;
-        }
-        else
-        {
-            playerSpeed = playerWalkSpeed;
-        }
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    playerSpeed = playerRunSpeed;
+        //}
+        //else
+        //{
+        //    playerSpeed = playerWalkSpeed;
+        //}
     }
 
     public static void movementOfPlayer()
@@ -32,12 +25,16 @@ public class SharedMovement
         selectSpeed();
 
         //Movement on X and Z
-        Vector3 move = movePlayer();
+        Vector3 movement = movePlayer();
+        Debug.Log("This is the move after: " + movement);
+
         //Jump
         jumpPlayer();
-        move.y = playerVelocity.y;
+        //movement.y = playerVelocity.y;
         // Move
-        Vector3 finalMove = move * playerSpeed + Vector3.up * playerVelocity.y;
+        Vector3 finalMove = movement * StaticStates.move.playerWalkSpeed + Vector3.up * playerVelocity.y;
+        StaticStates.player.transform.TransformDirection(finalMove);
+
         StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
     }
 
@@ -52,8 +49,8 @@ public class SharedMovement
         //Makes it so that the character will always be moving towards the direction they are moving
         if (move != Vector3.zero)
             StaticStates.player.transform.forward = move;
+        
 
-        Debug.Log(movingDirection);
         return move;
         
 
@@ -61,10 +58,8 @@ public class SharedMovement
 
     private static void jumpPlayer()
     {
-        //Get if the player is grounded
-        groundedPlayer = StaticStates.move.controller.isGrounded;
-
-        if (groundedPlayer)
+        //If the player is grounded
+        if (StaticStates.move.controller.isGrounded)
         {
             // Slight downward velocity to keep grounded stable. In other words, allows it so that, when falling, it will be at the given value.
             // //Otherwise, speed always accumulates when grounded
@@ -75,14 +70,14 @@ public class SharedMovement
         }
 
         //Need to convert to new input system
-        if (groundedPlayer && Input.GetKey(KeyCode.Space))
-        {
-            //Arbitrary formula for getting initial speed in y.
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
-        }
+        //if (StaticStates.move.controller.isGrounded && Input.GetKey(KeyCode.Space))
+        //{
+        //    //Arbitrary formula for getting initial speed in y.
+        //    playerVelocity.y = Mathf.Sqrt(StaticStates.move.jumpHeight * -2f * StaticStates.move.gravityValue);
+        //}
 
         // Apply gravity
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        playerVelocity.y += StaticStates.move.gravityValue * Time.deltaTime;
 
 
     }
