@@ -69,4 +69,31 @@ public class SharedMovement : MonoBehaviour
             playerSpeed = playerWalkSpeed;
         }
     }
+
+    public void movePlayer()
+    {
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        //This is like normalizing. It ensures that, whenever we are moving, we are advancing 1 unit (1, 0, 1)->(0.7, 0, 0.7)
+        move = Vector3.ClampMagnitude(move, 1f);
+
+        //Makes it so that the character will always be moving towards the direction they are moving
+        if (move != Vector3.zero)
+            transform.forward = move;
+
+        if (groundedPlayer && Input.GetKey(KeyCode.Space))
+        {
+            //Arbitrary formula for getting initial speed in y.
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
+        }
+
+        // Apply gravity
+        playerVelocity.y += gravityValue * Time.deltaTime;
+
+        // Move
+        Vector3 finalMove = move * playerSpeed + Vector3.up * playerVelocity.y;
+        controller.Move(finalMove * Time.deltaTime);
+
+    }
+
 }
