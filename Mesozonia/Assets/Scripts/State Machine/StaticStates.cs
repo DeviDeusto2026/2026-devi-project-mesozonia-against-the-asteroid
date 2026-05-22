@@ -1,18 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public static class StaticStates
 {
     public static GameObject player;
-    public static Movement mv;
+    public static Movement move;
     public static StateMachine stateMachine;
     public static List<IState> stateListMovement;
 
-    public static void InitializeStaticStates(string playerGameObject)
+    public static void InitializeStaticStates(string playerGameObject, List<InputActionReference> inputReferences)
     {
         player = GameObject.Find(playerGameObject);
-        mv = new Movement(player);
-
+        move = new Movement(player, inputReferences);
+        Debug.Log(move.movingDirection.action.ReadValue<Vector2>());
         stateListMovement = new List<IState>();
         stateListMovement.Add(new IdleState());
         stateListMovement.Add(new WalkState());

@@ -14,11 +14,11 @@ public class IdleState : IState
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log("mmiau");
-            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int) STATES.WALK]);
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    Debug.Log("mmiau");
+        //    StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int) STATES.WALK]);
+        //}
     }
     public void Exit()
     {
