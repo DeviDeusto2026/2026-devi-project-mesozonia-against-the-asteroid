@@ -33,7 +33,6 @@ public class SharedMovement
         //movement.y = playerVelocity.y;
         // Move
         Vector3 finalMove = movement * StaticStates.move.playerWalkSpeed + Vector3.up * playerVelocity.y;
-        StaticStates.player.transform.TransformDirection(finalMove);
 
         StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
     }
