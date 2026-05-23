@@ -8,8 +8,9 @@ public static class StaticStates
     public static Movement move;
     public static StateMachine stateMachine;
     public static List<IState> stateListMovement;
+    public static GameObject mainCamera;
 
-    public static void InitializeStaticStates(string playerGameObject, List<InputActionReference> inputReferences)
+    public static void InitializeStaticStates(string playerGameObject, List<InputActionReference> inputReferences, GameObject camera)
     {
         player = GameObject.Find(playerGameObject);
         move = new Movement(player, inputReferences);
@@ -19,6 +20,7 @@ public static class StaticStates
         stateListMovement.Add(new WalkState());
         stateMachine = new StateMachine(stateListMovement[(int) STATES.IDLE]);
         stateListMovement[(int)STATES.IDLE].Enter();
+        mainCamera = camera;
     }
 }
 

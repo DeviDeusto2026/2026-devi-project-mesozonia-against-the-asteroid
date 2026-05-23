@@ -10,6 +10,7 @@ public class StartingOfScene : MonoBehaviour
     public InputActionReference movingDirection;
     public InputActionReference changeRight;
     public InputActionReference changeLeft;
+    public GameObject mainCamera;
 
     private List<InputActionReference> inputReferences;
 
@@ -21,7 +22,7 @@ public class StartingOfScene : MonoBehaviour
 
         inputReferences = new List<InputActionReference>();
         inputReferences.Add(movingDirection);
-        StaticStates.InitializeStaticStates(playerNameFile, inputReferences);
+        StaticStates.InitializeStaticStates(playerNameFile, inputReferences, mainCamera);
     }
 
     private void Update()
