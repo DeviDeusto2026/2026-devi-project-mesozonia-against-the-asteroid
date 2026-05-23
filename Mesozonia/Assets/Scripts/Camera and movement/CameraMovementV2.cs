@@ -8,6 +8,8 @@ public class CameraMovementV2 : MonoBehaviour
     private Vector2 _camera_input_direction = Vector2.zero;
     private Vector2 mousePosition;
 
+    float pivotX;
+    float pivotY;
     public GameObject cameraPivot;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,6 +17,9 @@ public class CameraMovementV2 : MonoBehaviour
     {
         //We hide the cursor
         Cursor.visible = false;
+
+        pivotX = cameraPivot.transform.rotation.x;
+        pivotY = cameraPivot.transform.rotation.y;
     }
 
     // Update is called once per frame
@@ -36,10 +41,12 @@ public class CameraMovementV2 : MonoBehaviour
         mousePosition = newMousePosition;
         Debug.Log(_camera_input_direction);
 
-        Quaternion rotationCamera = new Quaternion(cameraPivot.transform.rotation.x + _camera_input_direction.y * Time.deltaTime, cameraPivot.transform.rotation.y - _camera_input_direction.x * Time.deltaTime, cameraPivot.transform.rotation.z, 1);
+        pivotX += _camera_input_direction.y * Time.deltaTime;
+        pivotY -= _camera_input_direction.x * Time.deltaTime;
+        Quaternion rotationCamera = new Quaternion(pivotX, pivotY, cameraPivot.transform.rotation.z, 1);
         //Slerp already does the clamp for us
         cameraPivot.transform.rotation = Quaternion.Slerp(cameraPivot.transform.rotation, rotationCamera, 0.5f);
-        //Debug.Log(rotationCamera);
+        Debug.Log(cameraPivot.transform.rotation.x);
     }
 
     private void FixedUpdate()
