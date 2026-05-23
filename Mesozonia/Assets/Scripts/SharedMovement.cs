@@ -41,7 +41,7 @@ public class SharedMovement
         movingDirection = StaticStates.move.movingDirection.action.ReadValue<Vector2>();
         Vector3 forward = StaticStates.player.transform.InverseTransformVector(StaticStates.mainCamera.transform.forward);
         forward.y = 0;
-        Vector3 ForwardRelative = movingDirection.y *forward;
+        Vector3 ForwardRelative = movingDirection.y * forward;
         
         Vector3 right = StaticStates.player.transform.InverseTransformVector(StaticStates.mainCamera.transform.right);
         right.y = 0;
