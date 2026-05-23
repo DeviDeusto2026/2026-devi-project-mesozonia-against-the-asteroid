@@ -497,7 +497,7 @@ MonoBehaviour:
   RecenteringTarget: 2
   HorizontalAxis:
     Value: 0
-    Center: -0
+    Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
     Recentering:
@@ -595,6 +595,7 @@ GameObject:
   - component: {fileID: 320105877}
   - component: {fileID: 320105876}
   - component: {fileID: 320105875}
+  - component: {fileID: 320105878}
   m_Layer: 0
   m_Name: LookingDirection
   m_TagString: Untagged
@@ -697,6 +698,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320105873}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &320105878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320105873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4067d7b4769b154cb91b29605bede37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FaceMovement
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1358,7 @@ GameObject:
   - component: {fileID: 554467990}
   - component: {fileID: 554467989}
   - component: {fileID: 554467988}
+  - component: {fileID: 554467991}
   m_Layer: 0
   m_Name: MainCameraTesting
   m_TagString: MainCamera
@@ -1470,6 +1484,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &554467991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554467986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c0a0c50d86801439dd9601f4dd283e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraMovementV2
+  cameraPivot: {fileID: 2000767375}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,6 +1558,7 @@ GameObject:
   - component: {fileID: 1156189278}
   - component: {fileID: 1156189277}
   - component: {fileID: 1156189276}
+  - component: {fileID: 1156189280}
   m_Layer: 0
   m_Name: Drypto
   m_TagString: Untagged
@@ -1633,6 +1661,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2045368810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1156189280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156189275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4067d7b4769b154cb91b29605bede37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FaceMovement
 --- !u!1 &1343402528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,6 +1819,7 @@ MonoBehaviour:
   movingDirection: {fileID: -886761498134459633, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   changeRight: {fileID: 4353395987390434825, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   changeLeft: {fileID: 7527699247327447645, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  mainCamera: {fileID: 554467986}
 --- !u!4 &1740105712
 Transform:
   m_ObjectHideFlags: 0
