@@ -30,10 +30,11 @@ public class CameraMovementV2 : MonoBehaviour
             mousePosition = Mouse.current.position.ReadValue();
         }
         Vector2 newMousePosition = Mouse.current.position.ReadValue();
-        //This small black captures the screen's proportion, and checks if the mouse is inside. When it's not there, it stops.
-        //Rect screenRect = new Rect(0, 0, Screen.width, Screen.height);
-        //if (!screenRect.Contains(Mouse.current.position.ReadValue()))
-        //    return;
+
+        //This small block captures the screen's proportion, and checks if the mouse is inside. When it's not there, it stops.
+        Rect screenRect = new Rect(0, 0, Screen.width, Screen.height);
+        if (!screenRect.Contains(Mouse.current.position.ReadValue()))
+            return;
 
         if ((mousePosition - newMousePosition) == Vector2.zero) return;
 
@@ -42,6 +43,7 @@ public class CameraMovementV2 : MonoBehaviour
         Debug.Log(_camera_input_direction);
 
         pivotX += _camera_input_direction.y * Time.deltaTime;
+       pivotX = Mathf.Clamp(pivotX,- Mathf.PI / 6.0f, Mathf.PI / 3.0f);
         pivotY -= _camera_input_direction.x * Time.deltaTime;
         Quaternion rotationCamera = new Quaternion(pivotX, pivotY, cameraPivot.transform.rotation.z, 1);
         //Slerp already does the clamp for us
