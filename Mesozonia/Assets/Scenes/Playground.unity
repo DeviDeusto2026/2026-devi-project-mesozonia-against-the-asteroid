@@ -1640,6 +1640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StartingOfScene
   playerNameFile: Characters
   movingDirection: {fileID: -886761498134459633, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  changeRight: {fileID: 4353395987390434825, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  changeLeft: {fileID: 7527699247327447645, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
 --- !u!4 &1740105712
 Transform:
   m_ObjectHideFlags: 0
@@ -1682,7 +1684,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: DryptoMovement
-  m_DefaultActionMap: 5982c0ae-5e62-49b9-ba43-b92967265449
+  m_DefaultActionMap: GeneralActions
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1835645520
