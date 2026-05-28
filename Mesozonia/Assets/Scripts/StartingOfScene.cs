@@ -30,6 +30,7 @@ public class StartingOfScene : MonoBehaviour
         inputReferences.Add(movingDirection);
         inputReferences.Add(jump);
         inputReferences.Add(sprint);
+        inputReferences.Add(specialSprint);
 
         StaticStates.InitializeStaticStates(playerNameFile, inputReferences, mainCamera);
     }
@@ -53,7 +54,7 @@ public class StartingOfScene : MonoBehaviour
 
     void jumpAction(InputAction.CallbackContext context)
     {
-        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB])
+        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
         }
@@ -69,9 +70,15 @@ public class StartingOfScene : MonoBehaviour
 
     void specialSprintAction(InputAction.CallbackContext context)
     {
-        if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.move.movingDirection.action.ReadValue<Vector2>() != Vector2.zero)
+        if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE])
         {
-            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.RUN]);
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.CHARGE]);
+        }
+
+        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE] && StaticStates.move.charges <= 0)
+        {
+            StaticStates.move.charges--;
+            StaticStates.move.specialSpeed = StaticStates.move.specialSpeedAchieved;
         }
     }
 }

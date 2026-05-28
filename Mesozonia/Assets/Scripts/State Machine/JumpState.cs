@@ -18,7 +18,7 @@ public class JumpState : IState
         {
             SharedMovement.movementOfPlayer();
         }
-        else
+        else if(StaticStates.move.sprint.action.ReadValue<float>() == 1)
         {
             SharedMovement.movementOfPlayer(StaticStates.move.playerRunSpeed);
         }
@@ -31,11 +31,11 @@ public class JumpState : IState
             }
             else
             {
-                if(StaticStates.move.sprint.action.ReadValue<float>() == 0)
+                if (StaticStates.move.sprint.action.ReadValue<float>() == 0)
                 {
                     StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
                 }
-                else if(StaticStates.move.sprint.action.ReadValue<float>() == 1)
+                else if (StaticStates.move.sprint.action.ReadValue<float>() == 1)
                 {
                     StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.RUN]);
                 }

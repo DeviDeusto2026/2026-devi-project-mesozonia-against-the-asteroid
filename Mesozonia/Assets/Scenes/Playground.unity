@@ -594,7 +594,6 @@ GameObject:
   - component: {fileID: 320105874}
   - component: {fileID: 320105877}
   - component: {fileID: 320105876}
-  - component: {fileID: 320105875}
   m_Layer: 0
   m_Name: LookingDirection
   m_TagString: Untagged
@@ -617,29 +616,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1195502942}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!136 &320105875
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320105873}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &320105876
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1572,10 +1548,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7368827
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.23688269, y: 0, z: 0}
 --- !u!23 &1156189277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1883,6 +1859,7 @@ MonoBehaviour:
   changeLeft: {fileID: 7527699247327447645, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   jump: {fileID: 6797355168670523539, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   sprint: {fileID: 1108560339608179503, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  specialSprint: {fileID: -6298855767868087722, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   mainCamera: {fileID: 554467986}
 --- !u!4 &1740105712
 Transform:
