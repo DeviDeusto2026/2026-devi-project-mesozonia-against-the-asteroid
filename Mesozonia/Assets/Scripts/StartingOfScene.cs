@@ -12,6 +12,8 @@ public class StartingOfScene : MonoBehaviour
     public InputActionReference changeLeft;
     public InputActionReference jump;
     public InputActionReference sprint;
+    public InputActionReference specialSprint;
+
     public GameObject mainCamera;
 
     private List<InputActionReference> inputReferences;
@@ -23,6 +25,7 @@ public class StartingOfScene : MonoBehaviour
         changeLeft.action.started += changeLeftAction;
         jump.action.started += jumpAction;
         sprint.action.started += sprintAction;
+        specialSprint.action.started += specialSprintAction;
         inputReferences = new List<InputActionReference>();
         inputReferences.Add(movingDirection);
         inputReferences.Add(jump);
@@ -57,6 +60,14 @@ public class StartingOfScene : MonoBehaviour
     }
 
     void sprintAction(InputAction.CallbackContext context)
+    {
+        if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.move.movingDirection.action.ReadValue<Vector2>() != Vector2.zero)
+        {
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.RUN]);
+        }
+    }
+
+    void specialSprintAction(InputAction.CallbackContext context)
     {
         if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.move.movingDirection.action.ReadValue<Vector2>() != Vector2.zero)
         {
