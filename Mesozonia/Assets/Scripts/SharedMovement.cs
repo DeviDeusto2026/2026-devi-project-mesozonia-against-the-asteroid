@@ -3,7 +3,6 @@ using UnityEngine;
 public class SharedMovement
 {
     public static CharacterController controller;
-    public static Vector3 playerVelocity;
     public static Vector2 movingDirection;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -31,7 +30,7 @@ public class SharedMovement
         jumpPlayer();
         //movement.y = playerVelocity.y;
         // Move
-        Vector3 finalMove = movement * StaticStates.move.playerWalkSpeed + Vector3.up * playerVelocity.y;
+        Vector3 finalMove = movement * StaticStates.move.playerWalkSpeed + Vector3.up * StaticStates.move.playerVelocity.y;
 
         StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
     }
@@ -42,7 +41,7 @@ public class SharedMovement
         Vector3 forward = StaticStates.player.transform.InverseTransformVector(StaticStates.mainCamera.transform.forward);
         forward.y = 0;
         Vector3 ForwardRelative = movingDirection.y * forward;
-        
+
         Vector3 right = StaticStates.player.transform.InverseTransformVector(StaticStates.mainCamera.transform.right);
         right.y = 0;
         Vector3 RightRelative = movingDirection.x * right;
@@ -54,25 +53,16 @@ public class SharedMovement
         //Makes it so that the character will always be moving towards the direction they are moving
         //if (move != Vector3.zero)
         //    StaticStates.player.transform.forward = ForwardRelative;
-        
+
 
         return move;
-        
+
 
     }
 
     private static void jumpPlayer()
     {
-        //If the player is grounded
-        if (StaticStates.move.controller.isGrounded)
-        {
-            // Slight downward velocity to keep grounded stable. In other words, allows it so that, when falling, it will be at the given value.
-            // //Otherwise, speed always accumulates when grounded
-            if (playerVelocity.y < -2f)
-            {
-                playerVelocity.y = -2f;
-            }
-        }
+        ApplyGravity();
 
         //Need to convert to new input system
         //if (StaticStates.move.controller.isGrounded && Input.GetKey(KeyCode.Space))
@@ -81,12 +71,27 @@ public class SharedMovement
         //    playerVelocity.y = Mathf.Sqrt(StaticStates.move.jumpHeight * -2f * StaticStates.move.gravityValue);
         //}
 
-        // Apply gravity
-        playerVelocity.y += StaticStates.move.gravityValue * Time.deltaTime;
+        
 
 
     }
 
+    public static void ApplyGravity()
+    {
+        if (StaticStates.move.controller.isGrounded)
+        {
+            // Slight downward velocity to keep grounded stable. In other words, allows it so that, when falling, it will be at the given value.
+            // //Otherwise, speed always accumulates when grounded
+            if (StaticStates.move.playerVelocity.y < -2f)
+            {
+                StaticStates.move.playerVelocity.y = -2f;
+            }
+        }
+        // Apply gravity
+        StaticStates.move.playerVelocity.y += StaticStates.move.gravityValue * Time.deltaTime;
+        StaticStates.player.GetComponent<CharacterController>().Move(StaticStates.move.playerVelocity * Time.deltaTime);
+
+    }
 }
 
 //selectSpeed();

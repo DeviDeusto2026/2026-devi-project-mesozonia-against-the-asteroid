@@ -14,6 +14,7 @@ public class IdleState : IState
 
     public void Update()
     {
+        SharedMovement.ApplyGravity();
         if (StaticStates.move.movingDirection.action.ReadValue<Vector2>() != Vector2.zero)
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
