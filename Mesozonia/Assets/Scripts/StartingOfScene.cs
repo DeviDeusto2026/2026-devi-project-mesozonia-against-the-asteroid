@@ -75,7 +75,7 @@ public class StartingOfScene : MonoBehaviour
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.CHARGE]);
         }
 
-        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE] && StaticStates.move.charges <= 0)
+        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.move.charges <= 0)
         {
             StaticStates.move.charges--;
             StaticStates.move.specialSpeed = StaticStates.move.specialSpeedAchieved;

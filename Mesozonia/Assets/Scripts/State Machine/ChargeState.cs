@@ -18,7 +18,7 @@ public class ChargeState : IState
     {
         chargeTime -= Time.deltaTime;
         Debug.Log(chargeTime);
-        StaticStates.move.specialSpeed += 0.1f; 
+        StaticStates.move.specialSpeed += 0.2f; 
 
         if(chargeTime <= 0 || StaticStates.move.specialSprint.action.ReadValue<float>() == 0)
         {
