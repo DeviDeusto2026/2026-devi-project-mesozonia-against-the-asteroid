@@ -20,6 +20,7 @@ public static class StaticStates
         stateListMovement.Add(new IdleState());
         stateListMovement.Add(new WalkState());
         stateListMovement.Add(new JumpState());
+        stateListMovement.Add(new RunState());
         stateMachine = new StateMachine(stateListMovement[(int) STATES.IDLE]);
         stateListMovement[(int)STATES.IDLE].Enter();
         mainCamera = camera;
@@ -29,5 +30,6 @@ public static class StaticStates
 public enum STATES : int{
     IDLE = 0,
     WALK = 1,
-    JUMP = 2
+    JUMP = 2,
+    RUN = 3
 };

@@ -15,16 +15,21 @@ public class Movement
     public Vector3 playerVelocity;
     private bool groundedPlayer;
     public InputActionReference movingDirection;
+    public InputActionReference jump;
+    public InputActionReference sprint;
+
 
     public Movement(GameObject player, List<InputActionReference> inputReferences)
     {
-        playerWalkSpeed = 5;
-        playerRunSpeed = 8;
+        playerWalkSpeed = 7;
+        playerRunSpeed = 14;
 
         jumpHeight = 3;
         gravityValue = -9.8f;
 
         movingDirection = inputReferences[0];
+        jump = inputReferences[1];
+        sprint = inputReferences[2];
         controller = player.GetComponent<CharacterController>();
     }
 }

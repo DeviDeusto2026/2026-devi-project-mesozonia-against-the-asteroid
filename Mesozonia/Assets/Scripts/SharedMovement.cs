@@ -6,22 +6,8 @@ public class SharedMovement
     public static Vector2 movingDirection;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    static void selectSpeed()
-    {
-        //if (Input.GetKey(KeyCode.LeftShift))
-        //{
-        //    playerSpeed = playerRunSpeed;
-        //}
-        //else
-        //{
-        //    playerSpeed = playerWalkSpeed;
-        //}
-    }
-
     public static void movementOfPlayer()
     {
-        selectSpeed();
-
         //Movement on X and Z
         Vector3 movement = movePlayer();
         //Debug.Log("This is the move after: " + movement);
@@ -31,6 +17,21 @@ public class SharedMovement
         //movement.y = playerVelocity.y;
         // Move
         Vector3 finalMove = movement * StaticStates.move.playerWalkSpeed + Vector3.up * StaticStates.move.playerVelocity.y;
+
+        StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
+    }
+
+    public static void movementOfPlayer(float speed)
+    {
+        //Movement on X and Z
+        Vector3 movement = movePlayer();
+        //Debug.Log("This is the move after: " + movement);
+
+        //Gravity
+        ApplyGravity();
+        //movement.y = playerVelocity.y;
+        // Move
+        Vector3 finalMove = movement * speed + Vector3.up * StaticStates.move.playerVelocity.y;
 
         StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
     }

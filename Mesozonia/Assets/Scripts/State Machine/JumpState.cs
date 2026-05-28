@@ -14,11 +14,18 @@ public class JumpState : IState
 
     public void Update()
     {
-        SharedMovement.movementOfPlayer();
+        if(StaticStates.move.sprint.action.ReadValue<float>() == 0)
+        {
+            SharedMovement.movementOfPlayer();
+        }
+        else
+        {
+            SharedMovement.movementOfPlayer(StaticStates.move.playerRunSpeed);
+        }
 
         if (StaticStates.move.controller.isGrounded)
         {
-            if(StaticStates.move.movingDirection.action.ReadValue<Vector2>() == Vector2.zero)
+            if (StaticStates.move.movingDirection.action.ReadValue<Vector2>() == Vector2.zero)
             {
                 StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.IDLE]);
             }
