@@ -9,6 +9,7 @@ public static class StaticStates
     public static StateMachine stateMachine;
     public static List<IState> stateListMovement;
     public static GameObject mainCamera;
+    public static Quaternion modelLookingDirectionRotation;
 
     public static void InitializeStaticStates(string playerGameObject, List<InputActionReference> inputReferences, GameObject camera)
     {

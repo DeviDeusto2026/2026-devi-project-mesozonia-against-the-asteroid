@@ -21,5 +21,6 @@ public class FaceMovement : MonoBehaviour
         Vector3 move = ForwardRelative + RightRelative;
 
         this.transform.forward = move;
+        StaticStates.modelLookingDirectionRotation = this.transform.rotation;
     }
 }

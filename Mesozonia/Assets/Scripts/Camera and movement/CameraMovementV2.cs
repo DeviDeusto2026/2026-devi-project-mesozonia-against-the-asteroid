@@ -11,15 +11,18 @@ public class CameraMovementV2 : MonoBehaviour
     float pivotX;
     float pivotY;
     public GameObject cameraPivot;
+    public InputActionReference recenterCamera;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //We hide the cursor
-        Cursor.visible = false;
+        //Cursor.visible = false;
 
         pivotX = cameraPivot.transform.rotation.x;
         pivotY = cameraPivot.transform.rotation.y;
+
+        recenterCamera.action.started += cameraRecenter;
     }
 
     // Update is called once per frame
@@ -50,4 +53,13 @@ public class CameraMovementV2 : MonoBehaviour
         cameraPivot.transform.rotation = Quaternion.Slerp(cameraPivot.transform.rotation, rotationCamera, 0.5f);
         //Debug.Log(cameraPivot.transform.rotation.x);
     }
-}
+
+    void cameraRecenter(InputAction.CallbackContext context)
+    {
+        Debug.Log("Recentering");
+        cameraPivot.transform.rotation = Quaternion.Slerp(cameraPivot.transform.rotation, StaticStates.modelLookingDirectionRotation, 1f);        
+        
+        pivotX = cameraPivot.transform.rotation.x;
+        pivotY = cameraPivot.transform.rotation.y;
+    }
+ }

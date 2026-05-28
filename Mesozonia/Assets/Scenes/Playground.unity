@@ -1497,6 +1497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMovementV2
   cameraPivot: {fileID: 2000767375}
+  recenterCamera: {fileID: -796413750872249436, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +1820,7 @@ MonoBehaviour:
   movingDirection: {fileID: -886761498134459633, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   changeRight: {fileID: 4353395987390434825, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   changeLeft: {fileID: 7527699247327447645, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  jump: {fileID: 6797355168670523539, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   mainCamera: {fileID: 554467986}
 --- !u!4 &1740105712
 Transform:

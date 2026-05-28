@@ -8,7 +8,7 @@
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "23d3b8cd-a106-4a85-a60b-623ca4594c7f",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -133,6 +133,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CameraActions",
+            "id": "2a2152f1-a1a3-4fb9-ae77-ef1e0dd6a8a9",
+            "actions": [
+                {
+                    "name": "Recenter",
+                    "type": "Button",
+                    "id": "46ffc4a9-345a-482c-b267-a4065ad2eb1e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c743ed5c-5693-43a7-9362-81ac2cf17367",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Recenter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
@@ -142,6 +170,11 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }
