@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 102686289}
   - component: {fileID: 102686288}
   - component: {fileID: 102686287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMovementV2
   cameraPivot: {fileID: 2000767375}
-  recenterCamera: {fileID: -796413750872249436, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  recenterCamera: {fileID: -557077472380169699, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1658,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1195502942}
   - component: {fileID: 1195502943}
+  - component: {fileID: 1195502944}
+  - component: {fileID: 1195502946}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -1694,6 +1696,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4067d7b4769b154cb91b29605bede37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FaceMovement
+--- !u!54 &1195502944
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195502941}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &1195502946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195502941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b928ff5b1726e40b0f89b9ceb43888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DryptoBehaviour
 --- !u!1 &1343402528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,7 +1882,7 @@ MonoBehaviour:
   changeRight: {fileID: 4353395987390434825, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   changeLeft: {fileID: 7527699247327447645, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   jump: {fileID: 6797355168670523539, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
-  sprint: {fileID: 3233800281493343099, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  sprint: {fileID: 1108560339608179503, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   mainCamera: {fileID: 554467986}
 --- !u!4 &1740105712
 Transform:
@@ -2150,7 +2191,7 @@ Transform:
   m_GameObject: {fileID: 2045368808}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.42, z: 0}
+  m_LocalPosition: {x: 0, y: 12.42, z: -7.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

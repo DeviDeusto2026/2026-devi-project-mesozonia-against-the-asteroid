@@ -11,16 +11,16 @@ public static class StaticStates
     public static GameObject mainCamera;
     public static Quaternion modelLookingDirectionRotation;
 
-    public static void InitializeStaticStates(string playerGameObject, List<InputActionReference> inputReferences, GameObject camera)
+    public static void InitializeStaticStates(string playerGameObject,List<InputActionReference> inputReferences, GameObject camera)
     {
         player = GameObject.Find(playerGameObject);
         move = new Movement(player, inputReferences);
-        //Debug.Log(move.movingDirection.action.ReadValue<Vector2>());
         stateListMovement = new List<IState>();
         stateListMovement.Add(new IdleState());
         stateListMovement.Add(new WalkState());
         stateListMovement.Add(new JumpState());
         stateListMovement.Add(new RunState());
+        stateListMovement.Add(new ClimbState());
         stateMachine = new StateMachine(stateListMovement[(int) STATES.IDLE]);
         stateListMovement[(int)STATES.IDLE].Enter();
         mainCamera = camera;
@@ -31,5 +31,6 @@ public enum STATES : int{
     IDLE = 0,
     WALK = 1,
     JUMP = 2,
-    RUN = 3
+    RUN = 3,
+    CLIMB = 4
 };

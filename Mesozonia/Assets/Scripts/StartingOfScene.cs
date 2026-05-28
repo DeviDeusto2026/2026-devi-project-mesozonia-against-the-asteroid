@@ -34,6 +34,7 @@ public class StartingOfScene : MonoBehaviour
     private void Update()
     {
         StaticStates.stateMachine.GetState().Update();
+        Debug.Log(StaticStates.stateMachine.GetState());
     }
 
 
@@ -49,7 +50,7 @@ public class StartingOfScene : MonoBehaviour
 
     void jumpAction(InputAction.CallbackContext context)
     {
-        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP])
+        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
         }
@@ -57,7 +58,7 @@ public class StartingOfScene : MonoBehaviour
 
     void sprintAction(InputAction.CallbackContext context)
     {
-        if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.move.movingDirection.action.ReadValue<Vector2>() != Vector2.zero)
+        if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.move.movingDirection.action.ReadValue<Vector2>() != Vector2.zero)
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.RUN]);
         }

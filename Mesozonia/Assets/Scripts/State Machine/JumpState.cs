@@ -31,7 +31,14 @@ public class JumpState : IState
             }
             else
             {
-                StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
+                if(StaticStates.move.sprint.action.ReadValue<float>() == 0)
+                {
+                    StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
+                }
+                else if(StaticStates.move.sprint.action.ReadValue<float>() == 1)
+                {
+                    StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.RUN]);
+                }
             }
         }
     }
