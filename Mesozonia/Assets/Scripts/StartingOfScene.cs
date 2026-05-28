@@ -34,6 +34,7 @@ public class StartingOfScene : MonoBehaviour
     private void Update()
     {
         StaticStates.stateMachine.GetState().Update();
+        Debug.Log(StaticStates.stateMachine.GetState());
     }
 
 
@@ -49,7 +50,7 @@ public class StartingOfScene : MonoBehaviour
 
     void jumpAction(InputAction.CallbackContext context)
     {
-        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP])
+        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
         }
