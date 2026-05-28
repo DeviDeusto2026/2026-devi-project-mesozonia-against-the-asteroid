@@ -7,4 +7,5 @@ public interface IState
     void Update();
 
     void Exit();
+
 }

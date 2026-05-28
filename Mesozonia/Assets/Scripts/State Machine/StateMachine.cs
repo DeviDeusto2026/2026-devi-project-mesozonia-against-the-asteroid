@@ -21,7 +21,7 @@ public class StateMachine
     //It exits and enters the new state
     public void Update()
     {
-        Debug.Log(this.currentState);
+        //Debug.Log(this.currentState);
         GetState().Update();
         //currentState?.Exit();
     }

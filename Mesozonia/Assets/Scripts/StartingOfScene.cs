@@ -10,6 +10,7 @@ public class StartingOfScene : MonoBehaviour
     public InputActionReference movingDirection;
     public InputActionReference changeRight;
     public InputActionReference changeLeft;
+    public InputActionReference jump;
     public GameObject mainCamera;
 
     private List<InputActionReference> inputReferences;
@@ -19,7 +20,7 @@ public class StartingOfScene : MonoBehaviour
     {
         changeRight.action.started += changeRightAction;
         changeLeft.action.started += changeLeftAction;
-
+        jump.action.started += jumpAction;
         inputReferences = new List<InputActionReference>();
         inputReferences.Add(movingDirection);
         StaticStates.InitializeStaticStates(playerNameFile, inputReferences, mainCamera);
@@ -39,5 +40,13 @@ public class StartingOfScene : MonoBehaviour
     void changeLeftAction(InputAction.CallbackContext context)
     {
         Debug.Log("izquierda");
+    }
+
+    void jumpAction(InputAction.CallbackContext context)
+    {
+        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP])
+        {
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
+        }
     }
 }

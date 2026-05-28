@@ -19,13 +19,10 @@ public class WalkState : IState
     {
         SharedMovement.movementOfPlayer();
 
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    i++;
-        //    Debug.Log(i);
-        //    Debug.Log("guau");
-        //    StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.IDLE]);
-        //}
+        if (StaticStates.move.movingDirection.action.ReadValue<Vector2>() == Vector2.zero)
+        {
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.IDLE]);
+        }
     }
 
     public void Exit()

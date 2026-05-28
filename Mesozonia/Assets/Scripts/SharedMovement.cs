@@ -24,10 +24,10 @@ public class SharedMovement
 
         //Movement on X and Z
         Vector3 movement = movePlayer();
-        Debug.Log("This is the move after: " + movement);
+        //Debug.Log("This is the move after: " + movement);
 
-        //Jump
-        jumpPlayer();
+        //Gravity
+        ApplyGravity();
         //movement.y = playerVelocity.y;
         // Move
         Vector3 finalMove = movement * StaticStates.move.playerWalkSpeed + Vector3.up * StaticStates.move.playerVelocity.y;
@@ -60,20 +60,15 @@ public class SharedMovement
 
     }
 
-    private static void jumpPlayer()
+    public static void jumpPlayer()
     {
-        ApplyGravity();
-
         //Need to convert to new input system
-        //if (StaticStates.move.controller.isGrounded && Input.GetKey(KeyCode.Space))
-        //{
-        //    //Arbitrary formula for getting initial speed in y.
-        //    playerVelocity.y = Mathf.Sqrt(StaticStates.move.jumpHeight * -2f * StaticStates.move.gravityValue);
-        //}
-
-        
-
-
+        if (StaticStates.move.controller.isGrounded)
+        {
+            //Arbitrary formula for getting initial speed in y.
+            StaticStates.move.playerVelocity.y = Mathf.Sqrt(StaticStates.move.jumpHeight * -2f * StaticStates.move.gravityValue);
+        }
+        StaticStates.player.GetComponent<CharacterController>().Move(StaticStates.move.playerVelocity * Time.deltaTime);
     }
 
     public static void ApplyGravity()

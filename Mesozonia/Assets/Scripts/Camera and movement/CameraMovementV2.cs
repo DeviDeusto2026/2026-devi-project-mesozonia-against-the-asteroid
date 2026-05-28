@@ -40,19 +40,14 @@ public class CameraMovementV2 : MonoBehaviour
 
         _camera_input_direction = (mousePosition - newMousePosition) * mouseSensitivity;
         mousePosition = newMousePosition;
-        Debug.Log(_camera_input_direction);
+        //Debug.Log(_camera_input_direction);
 
         pivotX += _camera_input_direction.y * Time.deltaTime;
-       pivotX = Mathf.Clamp(pivotX,- Mathf.PI / 6.0f, Mathf.PI / 3.0f);
+        pivotX = Mathf.Clamp(pivotX,- Mathf.PI / 6.0f, Mathf.PI / 3.0f);
         pivotY -= _camera_input_direction.x * Time.deltaTime;
         Quaternion rotationCamera = new Quaternion(pivotX, pivotY, cameraPivot.transform.rotation.z, 1);
         //Slerp already does the clamp for us
         cameraPivot.transform.rotation = Quaternion.Slerp(cameraPivot.transform.rotation, rotationCamera, 0.5f);
-        Debug.Log(cameraPivot.transform.rotation.x);
-    }
-
-    private void FixedUpdate()
-    {
-        
+        //Debug.Log(cameraPivot.transform.rotation.x);
     }
 }
