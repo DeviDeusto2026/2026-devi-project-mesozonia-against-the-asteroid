@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 6460483}
   - component: {fileID: 6460482}
   - component: {fileID: 6460481}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 56045414}
   - component: {fileID: 56045413}
   - component: {fileID: 56045412}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock(4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,6 +343,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56045410}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &91786904
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 872827455}
+    m_Modifications:
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 167.28677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -48.654594
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.1100159
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183428674050079453, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_Name
+      value: Piece (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183428674050079453, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
 --- !u!1001 &153483310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,6 +478,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8028355353767869792, guid: 6cf8ca7355c785f4e801872f116df31f, type: 3}
   m_PrefabInstance: {fileID: 153483310}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &153561433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 153561434}
+  m_Layer: 0
+  m_Name: CameraPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &153561434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153561433}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 788417036}
+  m_Father: {fileID: 1187675682}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &168182876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -569,8 +662,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045072008}
-        m_TargetAssemblyTypeName: GoToMainMenu, Assembly-CSharp
+      - m_Target: {fileID: 1045072007}
+        m_TargetAssemblyTypeName: MenusBehavior, Assembly-CSharp
         m_MethodName: changeToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -1281,7 +1374,7 @@ GameObject:
   - component: {fileID: 317048336}
   - component: {fileID: 317048335}
   - component: {fileID: 317048334}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1393,7 +1486,7 @@ GameObject:
   - component: {fileID: 345777993}
   - component: {fileID: 345777992}
   - component: {fileID: 345777991}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1505,7 +1598,7 @@ GameObject:
   - component: {fileID: 386768943}
   - component: {fileID: 386768942}
   - component: {fileID: 386768941}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1635,12 +1728,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d009f8744769b49a2c69820d9ebcdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartingOfScene
-  playerNameFile: Capsule
+  playerNameFile: Character
   movingDirection: {fileID: -886761498134459633, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   changeRight: {fileID: 4353395987390434825, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   changeLeft: {fileID: 7527699247327447645, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   jump: {fileID: 6797355168670523539, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   sprint: {fileID: 1108560339608179503, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  specialSprint: {fileID: -6298855767868087722, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   mainCamera: {fileID: 788417033}
 --- !u!4 &387359527
 Transform:
@@ -1684,7 +1778,7 @@ GameObject:
   - component: {fileID: 392538210}
   - component: {fileID: 392538209}
   - component: {fileID: 392538208}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock(8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1796,7 +1890,7 @@ GameObject:
   - component: {fileID: 465358771}
   - component: {fileID: 465358770}
   - component: {fileID: 465358769}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1908,7 +2002,7 @@ GameObject:
   - component: {fileID: 473002071}
   - component: {fileID: 473002070}
   - component: {fileID: 473002069}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2008,6 +2102,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473002067}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &512951134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+  m_PrefabInstance: {fileID: 91786904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &547106942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,7 +2119,7 @@ GameObject:
   - component: {fileID: 547106946}
   - component: {fileID: 547106945}
   - component: {fileID: 547106944}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock(5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2132,7 +2231,7 @@ GameObject:
   - component: {fileID: 553831387}
   - component: {fileID: 553831386}
   - component: {fileID: 553831385}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockPillar(6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2244,7 +2343,7 @@ GameObject:
   - component: {fileID: 583016197}
   - component: {fileID: 583016196}
   - component: {fileID: 583016195}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2430,7 +2529,7 @@ GameObject:
   - component: {fileID: 605610740}
   - component: {fileID: 605610739}
   - component: {fileID: 605610738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockPillar(4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2679,7 +2778,7 @@ GameObject:
   - component: {fileID: 633088417}
   - component: {fileID: 633088416}
   - component: {fileID: 633088415}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockPillar(3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3080,7 +3179,7 @@ GameObject:
   - component: {fileID: 737591260}
   - component: {fileID: 737591259}
   - component: {fileID: 737591258}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3192,7 +3291,7 @@ GameObject:
   - component: {fileID: 765844836}
   - component: {fileID: 765844835}
   - component: {fileID: 765844834}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3304,6 +3403,7 @@ GameObject:
   - component: {fileID: 788417035}
   - component: {fileID: 788417034}
   - component: {fileID: 788417037}
+  - component: {fileID: 788417038}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3379,11 +3479,11 @@ Transform:
   m_GameObject: {fileID: 788417033}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6399994, z: -4.4300003}
+  m_LocalPosition: {x: 0, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1487004785}
+  m_Father: {fileID: 153561434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &788417037
 MonoBehaviour:
@@ -3429,6 +3529,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &788417038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788417033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c0a0c50d86801439dd9601f4dd283e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraMovementV2
+  cameraPivot: {fileID: 153561433}
+  recenterCamera: {fileID: -557077472380169699, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
 --- !u!1 &846045463
 GameObject:
   m_ObjectHideFlags: 0
@@ -3513,8 +3627,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1045072007}
-        m_TargetAssemblyTypeName: Continue, Assembly-CSharp
-        m_MethodName: ContinueLevel
+        m_TargetAssemblyTypeName: MenusBehavior, Assembly-CSharp
+        m_MethodName: changeToLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3636,6 +3750,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8686990163968078860, guid: 092dcdc60c8918c458ed2941cc3a5201, type: 3}
   m_PrefabInstance: {fileID: 872318304}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &872827454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872827455}
+  m_Layer: 0
+  m_Name: Pieces
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &872827455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872827454}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50.66322, y: 102.25459, z: 279.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1301749943}
+  - {fileID: 512951134}
+  - {fileID: 1870336083}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906504729
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,7 +3796,7 @@ GameObject:
   - component: {fileID: 906504733}
   - component: {fileID: 906504732}
   - component: {fileID: 906504731}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3760,7 +3908,7 @@ GameObject:
   - component: {fileID: 907518990}
   - component: {fileID: 907518989}
   - component: {fileID: 907518988}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock(3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3872,7 +4020,7 @@ GameObject:
   - component: {fileID: 910159197}
   - component: {fileID: 910159196}
   - component: {fileID: 910159195}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockPillar(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4058,7 +4206,7 @@ GameObject:
   - component: {fileID: 969555986}
   - component: {fileID: 969555985}
   - component: {fileID: 969555984}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4241,8 +4389,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1045072006}
-  - component: {fileID: 1045072005}
-  - component: {fileID: 1045072008}
   - component: {fileID: 1045072007}
   m_Layer: 0
   m_Name: ButtonManager
@@ -4251,18 +4397,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1045072005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045072004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72bef1b4b770fc34eaca46da26718c8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonsBehavior
 --- !u!4 &1045072006
 Transform:
   m_ObjectHideFlags: 0
@@ -4287,22 +4421,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1045072004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c69bd14e8ab3b148bf4285d48421bdf, type: 3}
+  m_Script: {fileID: 11500000, guid: ec9fc9d7d51fbdc43b010b8ab4244946, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Continue
+  m_EditorClassIdentifier: Assembly-CSharp::MenusBehavior
   panelOptions: {fileID: 673025067}
---- !u!114 &1045072008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045072004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d8b2e713067e4b498904cfa843d5d7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GoToMainMenu
 --- !u!1 &1051416720
 GameObject:
   m_ObjectHideFlags: 0
@@ -4315,7 +4437,7 @@ GameObject:
   - component: {fileID: 1051416724}
   - component: {fileID: 1051416723}
   - component: {fileID: 1051416722}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4458,7 +4580,7 @@ GameObject:
   - component: {fileID: 1117249705}
   - component: {fileID: 1117249704}
   - component: {fileID: 1117249703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4570,7 +4692,7 @@ GameObject:
   - component: {fileID: 1147821365}
   - component: {fileID: 1147821364}
   - component: {fileID: 1147821363}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4682,7 +4804,7 @@ GameObject:
   - component: {fileID: 1187378746}
   - component: {fileID: 1187378745}
   - component: {fileID: 1187378744}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock(9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4782,6 +4904,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187378742}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1187675680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187675682}
+  - component: {fileID: 1187675681}
+  m_Layer: 0
+  m_Name: Character
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!143 &1187675681
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187675680}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1187675682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187675680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 57.5, y: 120, z: 271.3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1487004785}
+  - {fileID: 153561434}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1274603685
 GameObject:
   m_ObjectHideFlags: 0
@@ -4794,7 +4975,7 @@ GameObject:
   - component: {fileID: 1274603689}
   - component: {fileID: 1274603688}
   - component: {fileID: 1274603687}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4894,6 +5075,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274603685}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1301749939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7183428674050079453, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+  m_PrefabInstance: {fileID: 5315415287758372363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1301749943 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+  m_PrefabInstance: {fileID: 5315415287758372363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1301749944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301749939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59159c7f611d1d14bb5f61499bde5621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PiecesDestruction
 --- !u!1001 &1348829507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4980,7 +5183,7 @@ GameObject:
   - component: {fileID: 1356297547}
   - component: {fileID: 1356297546}
   - component: {fileID: 1356297545}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5091,6 +5294,18 @@ PrefabInstance:
     - target: {fileID: 1686021177304871604, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
       propertyPath: m_Name
       value: Ground_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.1761
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4009945
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.1761
       objectReference: {fileID: 0}
     - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5223,7 +5438,7 @@ GameObject:
   - component: {fileID: 1449495501}
   - component: {fileID: 1449495500}
   - component: {fileID: 1449495499}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockPillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5336,6 +5551,7 @@ GameObject:
   - component: {fileID: 1487004783}
   - component: {fileID: 1487004782}
   - component: {fileID: 1487004786}
+  - component: {fileID: 1487004787}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -5362,7 +5578,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -5431,39 +5647,52 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487004780}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29, y: 22, z: -67.65}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 788417036}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 1187675682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &1487004786
-CharacterController:
+--- !u!54 &1487004786
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487004780}
-  m_Material: {fileID: 0}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &1487004787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487004780}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b928ff5b1726e40b0f89b9ceb43888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DryptoBehaviour
 --- !u!1 &1525289148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5476,7 +5705,7 @@ GameObject:
   - component: {fileID: 1525289152}
   - component: {fileID: 1525289151}
   - component: {fileID: 1525289150}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5588,7 +5817,7 @@ GameObject:
   - component: {fileID: 1526477343}
   - component: {fileID: 1526477342}
   - component: {fileID: 1526477341}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5769,7 +5998,7 @@ GameObject:
   - component: {fileID: 1571411690}
   - component: {fileID: 1571411689}
   - component: {fileID: 1571411688}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockPillar(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5881,7 +6110,7 @@ GameObject:
   - component: {fileID: 1611108940}
   - component: {fileID: 1611108939}
   - component: {fileID: 1611108938}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock(6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6067,7 +6296,7 @@ GameObject:
   - component: {fileID: 1638590475}
   - component: {fileID: 1638590474}
   - component: {fileID: 1638590473}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6326,7 +6555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.357132
+      value: 67.6
       objectReference: {fileID: 0}
     - target: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6381,7 +6610,7 @@ GameObject:
   - component: {fileID: 1711499343}
   - component: {fileID: 1711499342}
   - component: {fileID: 1711499341}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6481,6 +6710,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711499339}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1717763949
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 872827455}
+    m_Modifications:
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -68.66322
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -90.75459
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -34.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183428674050079453, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_Name
+      value: Piece (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183428674050079453, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
 --- !u!1 &1746087901
 GameObject:
   m_ObjectHideFlags: 0
@@ -6493,7 +6783,7 @@ GameObject:
   - component: {fileID: 1746087905}
   - component: {fileID: 1746087904}
   - component: {fileID: 1746087903}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6750,8 +7040,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045072005}
-        m_TargetAssemblyTypeName: ButtonsBehavior, Assembly-CSharp
+      - m_Target: {fileID: 1045072007}
+        m_TargetAssemblyTypeName: MenusBehavior, Assembly-CSharp
         m_MethodName: changeToOptionMenu
         m_Mode: 1
         m_Arguments:
@@ -6808,6 +7098,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5204263869384690163, guid: 60f79905accf3b24fa0114b941f1aac0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 9069115365609054727, guid: 60f79905accf3b24fa0114b941f1aac0, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.9416
@@ -6881,7 +7175,7 @@ GameObject:
   - component: {fileID: 1868149324}
   - component: {fileID: 1868149323}
   - component: {fileID: 1868149322}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6981,6 +7275,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868149320}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1870336083 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+  m_PrefabInstance: {fileID: 1717763949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1906459176
 GameObject:
   m_ObjectHideFlags: 0
@@ -6993,7 +7292,7 @@ GameObject:
   - component: {fileID: 1906459180}
   - component: {fileID: 1906459179}
   - component: {fileID: 1906459178}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigRock(7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7332,7 +7631,7 @@ GameObject:
   - component: {fileID: 2142727060}
   - component: {fileID: 2142727059}
   - component: {fileID: 2142727058}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RockWall(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7576,6 +7875,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2604018522581791356, guid: 597e337c482368b40b6dd6ab5d107793, type: 3}
   m_PrefabInstance: {fileID: 4268550336659700069}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5315415287758372363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 872827455}
+    m_Modifications:
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.16321945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6545944
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179519548496361295, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183428674050079453, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_Name
+      value: Piece
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183428674050079453, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7183428674050079453, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1301749944}
+  m_SourcePrefab: {fileID: 100100000, guid: cb82130954c31a64dbd5e70cd14fe7d7, type: 3}
 --- !u!1001 &6901771481698525357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7656,7 +8019,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 305326581}
   - {fileID: 315130545}
-  - {fileID: 1487004785}
   - {fileID: 1549803917}
   - {fileID: 1823711477}
   - {fileID: 168182876}
@@ -7666,3 +8028,5 @@ SceneRoots:
   - {fileID: 224947364}
   - {fileID: 2080024351}
   - {fileID: 1045072006}
+  - {fileID: 1187675682}
+  - {fileID: 872827455}

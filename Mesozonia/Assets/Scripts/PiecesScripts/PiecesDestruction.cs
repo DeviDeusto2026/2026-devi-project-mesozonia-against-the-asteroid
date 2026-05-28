@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class BackToLevel : MonoBehaviour
+public class PiecesDestruction : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,9 +13,9 @@ public class BackToLevel : MonoBehaviour
     {
         
     }
-    public void changeToLevel()
-    {
-        SceneManager.LoadScene("Level");
-    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(this.gameObject);
+    }
 }

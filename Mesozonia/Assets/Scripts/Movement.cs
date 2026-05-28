@@ -21,11 +21,11 @@ public class Movement
 
     public Movement(GameObject player, List<InputActionReference> inputReferences)
     {
-        playerWalkSpeed = 7;
-        playerRunSpeed = 14;
+        playerWalkSpeed = 20;
+        playerRunSpeed = 40;
 
-        jumpHeight = 3;
-        gravityValue = -9.8f;
+        jumpHeight = 9;
+        gravityValue = -14f;
 
         movingDirection = inputReferences[0];
         jump = inputReferences[1];

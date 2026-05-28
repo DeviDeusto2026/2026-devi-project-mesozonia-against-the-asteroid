@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BackToLevel : MonoBehaviour
+public class MenusBehavior : MonoBehaviour
 {
+
+    public GameObject panelOptions;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,9 +16,24 @@ public class BackToLevel : MonoBehaviour
     {
         
     }
+
+    public void ContinueLevel()
+    {
+        panelOptions.SetActive(false);
+    }
+
+    public void changeToMainMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
+    }
+
+    public void changeToOptionMenu()
+    {
+        SceneManager.LoadScene("OptionMenu");
+    }
+
     public void changeToLevel()
     {
         SceneManager.LoadScene("Level");
     }
-
 }
