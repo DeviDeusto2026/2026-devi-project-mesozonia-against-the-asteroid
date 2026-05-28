@@ -8,7 +8,7 @@
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "23d3b8cd-a106-4a85-a60b-623ca4594c7f",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -45,7 +45,7 @@
                 {
                     "name": "Sprint",
                     "type": "Button",
-                    "id": "bd1f9e60-5950-4f23-8849-78f8f185238c",
+                    "id": "37c8794b-8da9-4885-8026-dca802933e02",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -143,7 +143,7 @@
                 },
                 {
                     "name": "",
-                    "id": "4559a7f1-bb2d-4ba2-82f2-1e682fdce99e",
+                    "id": "a98bd12c-d999-47c2-9b82-d479baa5bb26",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
@@ -156,12 +156,12 @@
         },
         {
             "name": "CameraActions",
-            "id": "2a2152f1-a1a3-4fb9-ae77-ef1e0dd6a8a9",
+            "id": "492b17f0-cb9d-4f72-aee6-f4bb1b5566b7",
             "actions": [
                 {
                     "name": "Recenter",
                     "type": "Button",
-                    "id": "46ffc4a9-345a-482c-b267-a4065ad2eb1e",
+                    "id": "68e71e64-228e-4adb-b811-9c7e1ff5958f",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -171,12 +171,40 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "c743ed5c-5693-43a7-9362-81ac2cf17367",
+                    "id": "de23a3ca-2122-467d-b083-f1e9c8f9fd41",
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Recenter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "MenuActions",
+            "id": "8df3a903-8a89-42fc-803f-b38de9aef23f",
+            "actions": [
+                {
+                    "name": "OpenMenu",
+                    "type": "Button",
+                    "id": "155a9814-7bef-4aa7-a2e4-9615a4419094",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "35d0dac5-7456-4625-b704-b64d77d8ba97",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
