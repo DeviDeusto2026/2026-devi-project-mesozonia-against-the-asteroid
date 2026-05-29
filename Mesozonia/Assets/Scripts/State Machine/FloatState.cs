@@ -10,13 +10,21 @@ public class FloatState : IState
 
     public void Enter()
     {
-        timer = 0.1f;
-        Debug.Log("FLOATING STATE");
+        if (StaticStates.changeLeft.action.ReadValue<float>() == 1 || StaticStates.changeRight.action.ReadValue<float>() == 1)
+        {
+            timer = 0;
+        }
+        else
+        {
+            timer = 0.1f;
+
+        }
     }
 
     public void Update()
     {
-        if(timer > 0)
+        
+        if (timer > 0)
         {
             timer -= Time.deltaTime;
             SharedMovement.movementOfPlayer();

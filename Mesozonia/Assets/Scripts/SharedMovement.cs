@@ -223,7 +223,7 @@ public class SharedMovement
     public static void jumpPlayerAir()
     {
         //Arbitrary formula for getting initial speed in y.
-        StaticStates.move.playerVelocity.y = 5;
+        StaticStates.move.playerVelocity.y = 15;
         StaticStates.player.GetComponent<CharacterController>().Move(StaticStates.move.playerVelocity * Time.deltaTime);
     }
 
