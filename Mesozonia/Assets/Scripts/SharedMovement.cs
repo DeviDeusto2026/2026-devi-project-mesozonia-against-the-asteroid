@@ -172,6 +172,19 @@ public class SharedMovement
         StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
     }
 
+    public static void flyingOfPlayer(float speed)
+    {
+        //Movement on X and Z
+        Vector3 movement = flyingMovement();
+
+        //Gravity
+        ApplyGravityFlying();
+        // Move
+        Vector3 finalMove = movement * speed + Vector3.up * StaticStates.move.playerVelocity.y;
+
+        StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
+    }
+
     static Vector3 flyingMovement()
     {
         movingDirection = StaticStates.move.movingDirection.action.ReadValue<Vector2>();
@@ -188,8 +201,8 @@ public class SharedMovement
         move = Vector3.ClampMagnitude(move, 1f);
 
         return move;
-
     }
+
 
     public static void ApplyGravityFlying()
     {
@@ -210,8 +223,37 @@ public class SharedMovement
     public static void jumpPlayerAir()
     {
         //Arbitrary formula for getting initial speed in y.
-        StaticStates.move.playerVelocity.y = 5;
+        StaticStates.move.playerVelocity.y = 15;
         StaticStates.player.GetComponent<CharacterController>().Move(StaticStates.move.playerVelocity * Time.deltaTime);
+    }
+
+    public static void floatingOfPlayer(float speed)
+    {
+        //Movement on X and Z
+        Vector3 movement = floatingMovement();
+
+        // Move
+        Vector3 finalMove = movement * speed;
+
+        StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
+    }
+
+    static Vector3 floatingMovement()
+    {
+        movingDirection = StaticStates.move.movingDirection.action.ReadValue<Vector2>();
+        Vector3 forward = StaticStates.player.transform.InverseTransformVector(StaticStates.mainCamera.transform.forward);
+        forward.y = 0;
+        Vector3 ForwardRelative = movingDirection.y * forward;
+
+        Vector3 right = StaticStates.player.transform.InverseTransformVector(StaticStates.mainCamera.transform.right);
+        right.y = 0;
+        Vector3 RightRelative = movingDirection.x * right;
+        Vector3 move = ForwardRelative + RightRelative;
+
+        //This is like normalizing. It ensures that, whenever we are moving, we are advancing 1 unit (1, 0, 1)->(0.7, 0, 0.7)
+        move = Vector3.ClampMagnitude(move, 1f);
+
+        return move;
     }
 }
 

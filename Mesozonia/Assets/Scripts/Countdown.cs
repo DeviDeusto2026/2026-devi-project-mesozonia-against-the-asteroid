@@ -25,9 +25,6 @@ public class Countdown : MonoBehaviour
 
         seconds -= Time.deltaTime;
 
-        Debug.Log("Minutos: " + minutes);
-        Debug.Log("Segundos: " + seconds);
-
         int seconds2 = (int)seconds;
         countDownText.text = "TIME LEFT: " + minutes.ToString() + " : " + seconds2.ToString();
 

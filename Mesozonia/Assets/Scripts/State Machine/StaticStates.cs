@@ -27,6 +27,7 @@ public static class StaticStates
         stateListMovement.Add(new ChargeState());
         stateListMovement.Add(new SpecialSprintState());
         stateListMovement.Add(new FlyState());
+        stateListMovement.Add(new FloatState());
         stateMachine = new StateMachine(stateListMovement[(int) STATES.IDLE]);
         stateListMovement[(int)STATES.IDLE].Enter();
         mainCamera = camera;
@@ -44,5 +45,6 @@ public enum STATES : int{
     CLIMB = 4,
     CHARGE = 5,
     SPECIAL_SPRINT = 6,
-    FLY = 7
+    FLY = 7,
+    FLOAT = 8
 };

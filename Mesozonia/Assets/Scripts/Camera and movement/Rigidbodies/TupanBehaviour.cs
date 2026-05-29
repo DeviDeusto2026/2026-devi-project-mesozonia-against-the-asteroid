@@ -17,4 +17,21 @@ public class TupanBehaviour : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.FLOAT]);
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
+        }
+    }
 }
