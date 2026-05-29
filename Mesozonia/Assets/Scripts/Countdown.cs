@@ -6,8 +6,9 @@ public class Countdown : MonoBehaviour
 {
 
     [SerializeField] Text countDownText;
-    private float seconds = 30;
-    private float minutes = 2;
+
+    private float seconds = 60;
+    private float minutes = 10;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
