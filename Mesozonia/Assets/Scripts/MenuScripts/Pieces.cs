@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Pieces : MonoBehaviour
 {
 
-    public int piecesLeft = 3;
+    private int piecesLeft = 3;
     [SerializeField] Text pieceText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
