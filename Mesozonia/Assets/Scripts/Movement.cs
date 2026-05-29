@@ -39,7 +39,7 @@ public class Movement
         playerWalkSpeed = 20;
         playerRunSpeed = 40;
 
-        jumpHeight = 9;
+        jumpHeight = 7;
         gravityValue = -14f;
         gravityValueFlying = -1f;
 

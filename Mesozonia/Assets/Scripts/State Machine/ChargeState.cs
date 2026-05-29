@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ChargeState : IState
 {
-    private float chargeTime = 5;
+    private float chargeTime = 3;
     public ChargeState()
     {
 
@@ -10,7 +10,7 @@ public class ChargeState : IState
 
     public void Enter()
     {
-        chargeTime = 5;
+        chargeTime = 3;
         StaticStates.move.specialSpeed = 10;
     }
 
@@ -18,7 +18,7 @@ public class ChargeState : IState
     {
         chargeTime -= Time.deltaTime;
         Debug.Log(chargeTime);
-        StaticStates.move.specialSpeed += 0.3f; 
+        StaticStates.move.specialSpeed += 0.5f; 
 
         if(chargeTime <= 0 || StaticStates.move.specialSprint.action.ReadValue<float>() == 0)
         {

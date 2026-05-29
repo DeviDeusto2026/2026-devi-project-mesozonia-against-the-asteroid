@@ -29,7 +29,7 @@ public class EurhinBehaviour : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        StaticStates.move.playerVelocity.y = 50;
+        StaticStates.move.playerVelocity.y = 15;
         StaticStates.player.GetComponent<CharacterController>().Move(StaticStates.move.playerVelocity * Time.deltaTime);
 
         StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
