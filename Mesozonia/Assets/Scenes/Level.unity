@@ -1758,6 +1758,7 @@ MonoBehaviour:
   jump: {fileID: 6797355168670523539, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   sprint: {fileID: 1108560339608179503, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   specialSprint: {fileID: -6298855767868087722, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  fly: {fileID: 5621751940721261899, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   mainCamera: {fileID: 788417033}
   Drypto: {fileID: 1487004780}
   Tupan: {fileID: 521719535}
@@ -5107,7 +5108,7 @@ Transform:
   m_GameObject: {fileID: 1187675680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1, y: 105.3, z: 278.22}
+  m_LocalPosition: {x: 13.1, y: 4.3, z: 106.4}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:

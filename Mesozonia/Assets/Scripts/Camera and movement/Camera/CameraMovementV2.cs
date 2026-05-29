@@ -57,7 +57,7 @@ public class CameraMovementV2 : MonoBehaviour
     void cameraRecenter(InputAction.CallbackContext context)
     {
         Debug.Log("Recentering");
-        cameraPivot.transform.rotation = Quaternion.Slerp(cameraPivot.transform.rotation, StaticStates.modelLookingDirectionRotation, 1f);        
+        cameraPivot.transform.rotation = StaticStates.modelLookingDirectionRotation;        
         
         pivotX = cameraPivot.transform.rotation.x;
         pivotY = cameraPivot.transform.rotation.y;
