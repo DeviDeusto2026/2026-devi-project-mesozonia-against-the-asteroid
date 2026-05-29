@@ -13,6 +13,7 @@ public class StartingOfScene : MonoBehaviour
     public InputActionReference jump;
     public InputActionReference sprint;
     public InputActionReference specialSprint;
+    public InputActionReference fly;
 
     public GameObject mainCamera;
     public GameObject Drypto;
@@ -38,6 +39,7 @@ public class StartingOfScene : MonoBehaviour
         inputReferences.Add(specialSprint);
         inputReferences.Add(changeLeft);
         inputReferences.Add(changeRight);
+        inputReferences.Add(fly);
 
         StaticStates.InitializeStaticStates(playerNameFile, inputReferences, mainCamera);
     }
@@ -99,9 +101,16 @@ public class StartingOfScene : MonoBehaviour
 
     void jumpAction(InputAction.CallbackContext context)
     {
-        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE])
+        if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.FLY])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
+        }
+
+        if (StaticStates.move.flyCharges > 0 && StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.FLY])
+        {
+            Debug.Log(StaticStates.move.flyCharges);
+            StaticStates.move.flyCharges--;
+            SharedMovement.jumpPlayerAir();
         }
     }
 
@@ -115,7 +124,7 @@ public class StartingOfScene : MonoBehaviour
 
     void specialSprintAction(InputAction.CallbackContext context)
     {
-        if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE])
+        if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.FLY])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.CHARGE]);
         }

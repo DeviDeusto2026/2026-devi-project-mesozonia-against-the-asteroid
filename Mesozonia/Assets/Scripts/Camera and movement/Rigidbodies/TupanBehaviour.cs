@@ -10,5 +10,11 @@ public class TupanBehaviour : MonoBehaviour
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
         }
+
+        if(StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.move.fly.action.ReadValue<float>() == 1)
+        {
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.FLY]);
+        }
+
     }
 }

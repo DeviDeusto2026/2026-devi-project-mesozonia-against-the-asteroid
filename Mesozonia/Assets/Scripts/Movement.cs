@@ -12,16 +12,19 @@ public class Movement
 
     public float jumpHeight;
     public float gravityValue;
+    public float gravityValueFlying;
 
     public CharacterController controller;
     public Vector3 playerVelocity;
-    private bool groundedPlayer;
 
     public int charges = 2;
+    public int flyCharges = 2;
+
     public InputActionReference movingDirection;
     public InputActionReference jump;
     public InputActionReference sprint;
     public InputActionReference specialSprint;
+    public InputActionReference fly;
 
 
     public Movement(GameObject player, List<InputActionReference> inputReferences)
@@ -31,11 +34,13 @@ public class Movement
 
         jumpHeight = 9;
         gravityValue = -14f;
+        gravityValueFlying = -1f;
 
         movingDirection = inputReferences[0];
         jump = inputReferences[1];
         sprint = inputReferences[2];
         specialSprint = inputReferences[3];
+        fly = inputReferences[6];
         controller = player.GetComponent<CharacterController>();
     }
 }
