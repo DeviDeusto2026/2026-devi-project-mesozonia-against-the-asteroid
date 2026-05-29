@@ -15,6 +15,11 @@ public class StartingOfScene : MonoBehaviour
     public InputActionReference specialSprint;
 
     public GameObject mainCamera;
+    public GameObject Drypto;
+    public GameObject Tupan;
+    public GameObject Eurhin;
+    private int currentCharacter = 0;
+
 
     private List<InputActionReference> inputReferences;
 
@@ -31,6 +36,8 @@ public class StartingOfScene : MonoBehaviour
         inputReferences.Add(jump);
         inputReferences.Add(sprint);
         inputReferences.Add(specialSprint);
+        inputReferences.Add(changeLeft);
+        inputReferences.Add(changeRight);
 
         StaticStates.InitializeStaticStates(playerNameFile, inputReferences, mainCamera);
     }
@@ -44,12 +51,50 @@ public class StartingOfScene : MonoBehaviour
 
     void changeRightAction(InputAction.CallbackContext context)
     {
-        Debug.Log("derecha");
+        //if (currentCharacter != 2 && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB])
+        //{
+        //    StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
+        //}
+        if (currentCharacter == 0)
+        {
+            currentCharacter = 1;
+            Drypto.SetActive(false);
+            Tupan.SetActive(true);
+        }
+        else if(currentCharacter == 1)
+        {
+            currentCharacter = 2;
+            Tupan.SetActive(false);
+            Eurhin.SetActive(true);
+        }
+        else if(currentCharacter == 2)
+        {
+            currentCharacter = 0;
+            Eurhin.SetActive(false);
+            Drypto.SetActive(true);
+        }
     }
 
     void changeLeftAction(InputAction.CallbackContext context)
     {
-        Debug.Log("izquierda");
+        if (currentCharacter == 0)
+        {
+            currentCharacter = 1;
+            Drypto.SetActive(false);
+            Eurhin.SetActive(true);
+        }
+        else if (currentCharacter == 1)
+        {
+            currentCharacter = 2;
+            Eurhin.SetActive(false);
+            Tupan.SetActive(true);
+        }
+        else if (currentCharacter == 2)
+        {
+            currentCharacter = 0;
+            Tupan.SetActive(false);
+            Drypto.SetActive(true);
+        }
     }
 
     void jumpAction(InputAction.CallbackContext context)

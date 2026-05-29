@@ -2,19 +2,24 @@ using UnityEngine;
 
 public class DryptoBehaviour : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if ((StaticStates.changeLeft.action.ReadValue<float>() == 1 || StaticStates.changeRight.action.ReadValue<float>() == 1) && StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.CLIMB])
+        {
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Climbable"))
+        {
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.CLIMB]);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Climbable"))
         {

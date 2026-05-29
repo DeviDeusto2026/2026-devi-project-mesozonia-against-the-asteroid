@@ -16,7 +16,7 @@ public class SpecialSprintState : IState
 
     public void Update()
     {
-        StaticStates.move.specialSpeed -= 0.1f;
+        StaticStates.move.specialSpeed -= 0.2f;
 
         SharedMovement.movementOfPlayerSpecial();
 
