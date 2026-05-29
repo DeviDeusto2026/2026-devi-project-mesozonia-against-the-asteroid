@@ -172,6 +172,19 @@ public class SharedMovement
         StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
     }
 
+    public static void flyingOfPlayer(float speed)
+    {
+        //Movement on X and Z
+        Vector3 movement = flyingMovement();
+
+        //Gravity
+        ApplyGravityFlying();
+        // Move
+        Vector3 finalMove = movement * speed + Vector3.up * StaticStates.move.playerVelocity.y;
+
+        StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
+    }
+
     static Vector3 flyingMovement()
     {
         movingDirection = StaticStates.move.movingDirection.action.ReadValue<Vector2>();
@@ -188,8 +201,8 @@ public class SharedMovement
         move = Vector3.ClampMagnitude(move, 1f);
 
         return move;
-
     }
+
 
     public static void ApplyGravityFlying()
     {

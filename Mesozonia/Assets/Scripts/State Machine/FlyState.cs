@@ -16,8 +16,15 @@ public class FlyState : IState
 
     public void Update()
     {
-        SharedMovement.flyingOfPlayer();
-        
+        if (StaticStates.move.sprint.action.ReadValue<float>() == 0)
+        {
+            SharedMovement.flyingOfPlayer();
+        }
+        else
+        {
+            SharedMovement.flyingOfPlayer(StaticStates.move.playerRunSpeed);
+        }
+
 
         if (StaticStates.move.controller.isGrounded)
         {
