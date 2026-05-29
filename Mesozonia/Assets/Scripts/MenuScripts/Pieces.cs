@@ -1,11 +1,14 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Pieces : MonoBehaviour
 {
 
     public int piecesLeft = 3;
+    [SerializeField] Text pieceText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,21 +21,13 @@ public class Pieces : MonoBehaviour
         
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.name == "Piece")
-    //    {
-    //        Destroy(other.gameObject);
-    //        piecesLeft--;
-    //        checkPiecesLeft();
-    //    }
-    //}
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Piece"))
         {
             Destroy(collision.gameObject);
             piecesLeft--;
+            pieceText.text = "PIECES LEFT: " + piecesLeft;
             checkPiecesLeft();
         }
     }
