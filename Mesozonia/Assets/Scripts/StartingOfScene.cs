@@ -14,6 +14,9 @@ public class StartingOfScene : MonoBehaviour
     public InputActionReference sprint;
     public InputActionReference specialSprint;
     public InputActionReference fly;
+    public InputActionReference swimUp;
+    public InputActionReference swimDown;
+
 
     public GameObject mainCamera;
     public GameObject Drypto;
@@ -40,23 +43,29 @@ public class StartingOfScene : MonoBehaviour
         inputReferences.Add(changeLeft);
         inputReferences.Add(changeRight);
         inputReferences.Add(fly);
+        inputReferences.Add(swimUp);
+        inputReferences.Add(swimDown);
 
-        StaticStates.InitializeStaticStates(playerNameFile, inputReferences, mainCamera);
+
+        StaticStates.InitializeStaticStates(playerNameFile, inputReferences, mainCamera, Drypto.GetComponent<Rigidbody>(), Tupan.GetComponent<Rigidbody>(), Eurhin.GetComponent<Rigidbody>());
     }
 
     private void Update()
     {
         StaticStates.stateMachine.GetState().Update();
         Debug.Log(StaticStates.stateMachine.GetState());
+
+        if (StaticStates.move.controller.isGrounded)
+        {
+            StaticStates.move.flyCharges = 2;
+        }
     }
 
 
     void changeRightAction(InputAction.CallbackContext context)
     {
-        //if (currentCharacter != 2 && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB])
-        //{
-        //    StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
-        //}
+        if (StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.SWIM]) return;
+
         if (currentCharacter == 0)
         {
             currentCharacter = 1;
@@ -68,6 +77,11 @@ public class StartingOfScene : MonoBehaviour
             currentCharacter = 2;
             Tupan.SetActive(false);
             Eurhin.SetActive(true);
+
+            if(StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.FLY])
+            {
+                StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
+            }
         }
         else if(currentCharacter == 2)
         {
@@ -79,6 +93,8 @@ public class StartingOfScene : MonoBehaviour
 
     void changeLeftAction(InputAction.CallbackContext context)
     {
+        if (StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.SWIM]) return;
+
         if (currentCharacter == 0)
         {
             currentCharacter = 1;
@@ -96,6 +112,11 @@ public class StartingOfScene : MonoBehaviour
             currentCharacter = 0;
             Tupan.SetActive(false);
             Drypto.SetActive(true);
+
+            if (StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.FLY])
+            {
+                StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
+            }
         }
     }
 
@@ -106,8 +127,7 @@ public class StartingOfScene : MonoBehaviour
             SharedMovement.jumpPlayerAir();
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
         }
-
-        else if(StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.FLY])
+        else if(StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.WALK] || StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.IDLE] || StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.RUN])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
         }
@@ -122,7 +142,7 @@ public class StartingOfScene : MonoBehaviour
 
     void sprintAction(InputAction.CallbackContext context)
     {
-        if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.move.movingDirection.action.ReadValue<Vector2>() != Vector2.zero && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.FLY] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.FLOAT])
+         if (StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.WALK] || StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.IDLE])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.RUN]);
         }
@@ -130,12 +150,12 @@ public class StartingOfScene : MonoBehaviour
 
     void specialSprintAction(InputAction.CallbackContext context)
     {
-        if (StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.JUMP] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CLIMB] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.CHARGE] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.FLY] && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.FLOAT])
+        if (StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.WALK] || StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.IDLE] || StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.RUN])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.CHARGE]);
         }
 
-        if(StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.move.charges > 0)
+        else if(StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.SPECIAL_SPRINT] && StaticStates.move.charges > 0)
         {
             Debug.Log("CHARGE USED");
             StaticStates.move.charges--;

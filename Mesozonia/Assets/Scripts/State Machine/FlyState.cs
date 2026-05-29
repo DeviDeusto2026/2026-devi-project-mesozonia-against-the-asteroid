@@ -9,7 +9,6 @@ public class FlyState : IState
 
     public void Enter()
     {
-        StaticStates.move.flyCharges = 2;
         StaticStates.move.playerVelocity.y = 0;
 
     }
@@ -29,6 +28,11 @@ public class FlyState : IState
         if (StaticStates.move.controller.isGrounded)
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
+        }
+
+        if (StaticStates.move.fly.action.ReadValue<float>() == 0)
+        {
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
         }
     }
 

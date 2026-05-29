@@ -525,7 +525,7 @@ Transform:
   m_GameObject: {fileID: 153561433}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1759,6 +1759,8 @@ MonoBehaviour:
   sprint: {fileID: 1108560339608179503, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   specialSprint: {fileID: -6298855767868087722, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   fly: {fileID: 5621751940721261899, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  swimUp: {fileID: 7629988069419550137, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  swimDown: {fileID: 5229695971388731405, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
   mainCamera: {fileID: 788417033}
   Drypto: {fileID: 1487004780}
   Tupan: {fileID: 521719535}
@@ -3990,8 +3992,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.9905024}
+  m_Center: {x: 0, y: -5.519288e-13, z: 0.004748817}
 --- !u!23 &906504732
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5092,7 +5094,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 2.1
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -5108,7 +5110,7 @@ Transform:
   m_GameObject: {fileID: 1187675680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.1, y: 4.3, z: 106.4}
+  m_LocalPosition: {x: 0, y: 4.63, z: 97.83}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7904,6 +7906,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1187675682}
     m_Modifications:
+    - target: {fileID: 4276156172271419832, guid: 15960141507fe0640bfeb2f0b0e467e1, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5170589310249534210, guid: 15960141507fe0640bfeb2f0b0e467e1, type: 3}
       propertyPath: m_Name
       value: Eurhin
@@ -8182,6 +8188,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1187675682}
     m_Modifications:
+    - target: {fileID: 3400325017776504466, guid: 8eeac45becd7fc648aab5cdc3d8ba190, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5413434439828405956, guid: 8eeac45becd7fc648aab5cdc3d8ba190, type: 3}
       propertyPath: m_Name
       value: Tupan
@@ -8317,6 +8327,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1187675682}
     m_Modifications:
+    - target: {fileID: 2931682428954626401, guid: fa46129b255437d4fa136b5659121a39, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3831229095740518386, guid: fa46129b255437d4fa136b5659121a39, type: 3}
       propertyPath: m_Name
       value: Drypto

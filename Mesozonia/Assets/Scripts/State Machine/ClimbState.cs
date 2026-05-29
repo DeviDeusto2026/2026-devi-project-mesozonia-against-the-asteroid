@@ -14,14 +14,28 @@ public class ClimbState : IState
 
     public void Update()
     {
-        //TODO polish for shift key and allow jumping
-        if(StaticStates.move.sprint.action.ReadValue<float>() == 0)
+        Vector3 direction = Vector3.zero;
+
+        RaycastHit hit;
+        if (Physics.Raycast(StaticStates.player.transform.position,
+                            StaticStates.player.transform.forward,
+                            out hit))
         {
-            SharedMovement.climbingOfPlayer(10);
+            direction = -hit.normal;
+            Debug.Log("The normal: " + direction);
+        }
+
+
+
+
+        //TODO allow jumping
+        if (StaticStates.move.sprint.action.ReadValue<float>() == 0)
+        {
+            SharedMovement.climbingOfPlayer(10, direction);
         }
         else
         {
-            SharedMovement.climbingOfPlayer(20);
+            SharedMovement.climbingOfPlayer(20, direction);
         }
     }
 

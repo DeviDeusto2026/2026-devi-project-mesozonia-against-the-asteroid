@@ -8,7 +8,6 @@ public class JumpState : IState
     
     public void Enter()
     {
-        Debug.Log("Saltar es mi pasion");
         SharedMovement.jumpPlayer();
     }
 

@@ -14,6 +14,10 @@ public class Movement
     public float gravityValue;
     public float gravityValueFlying;
 
+    public float swimDownValue;
+    public float swimUpValue;
+
+
     public CharacterController controller;
     public Vector3 playerVelocity;
 
@@ -25,6 +29,9 @@ public class Movement
     public InputActionReference sprint;
     public InputActionReference specialSprint;
     public InputActionReference fly;
+    public InputActionReference swimUp;
+    public InputActionReference swimDown;
+
 
 
     public Movement(GameObject player, List<InputActionReference> inputReferences)
@@ -36,11 +43,16 @@ public class Movement
         gravityValue = -14f;
         gravityValueFlying = -1f;
 
+        swimDownValue = -1500f;
+        swimUpValue = +1500f;
+
         movingDirection = inputReferences[0];
         jump = inputReferences[1];
         sprint = inputReferences[2];
         specialSprint = inputReferences[3];
         fly = inputReferences[6];
+        swimUp = inputReferences[7];
+        swimDown = inputReferences[8];
         controller = player.GetComponent<CharacterController>();
     }
 }

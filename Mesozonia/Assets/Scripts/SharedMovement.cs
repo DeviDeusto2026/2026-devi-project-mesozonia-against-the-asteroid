@@ -88,10 +88,10 @@ public class SharedMovement
 
     }
 
-    public static void climbingOfPlayer(float speed)
+    public static void climbingOfPlayer(float speed, Vector3 direction)
     {
         //Movement on X and Z
-        Vector3 movement = climbPlayer();
+        Vector3 movement = climbPlayer(direction);
         //Debug.Log("This is the move after: " + movement);
 
         
@@ -102,21 +102,23 @@ public class SharedMovement
         StaticStates.player.GetComponent<CharacterController>().Move(finalMove * Time.deltaTime);
     }
 
-    static Vector3 climbPlayer()
+    static Vector3 climbPlayer(Vector3 direction)
     {
         movingDirection = StaticStates.move.movingDirection.action.ReadValue<Vector2>();
         Vector3 up = StaticStates.player.transform.InverseTransformVector(StaticStates.mainCamera.transform.up);
-        up.z = 0;
+        //up.z = 0;
         Vector3 UpRelative = movingDirection.y * up;
 
         Vector3 right = StaticStates.player.transform.InverseTransformVector(StaticStates.mainCamera.transform.right);
-        right.z = 0;
+        //right.z = 0;
         Vector3 RightRelative = movingDirection.x * right;
         Vector3 move =UpRelative + RightRelative;
+
 
         //This is like normalizing. It ensures that, whenever we are moving, we are advancing 1 unit (1, 0, 1)->(0.7, 0, 0.7)
         move = Vector3.ClampMagnitude(move, 1f);
 
+        Debug.Log(move);
 
         return move;
     }
@@ -255,5 +257,18 @@ public class SharedMovement
 
         return move;
     }
+
+    public static void ApplySwimDown()
+    {
+        StaticStates.move.playerVelocity.y = StaticStates.move.swimDownValue * Time.deltaTime;
+        StaticStates.player.GetComponent<CharacterController>().Move(StaticStates.move.playerVelocity * Time.deltaTime);
+    }
+
+    public static void ApplySwimUp()
+    {
+        StaticStates.move.playerVelocity.y = StaticStates.move.swimUpValue * Time.deltaTime;
+        StaticStates.player.GetComponent<CharacterController>().Move(StaticStates.move.playerVelocity * Time.deltaTime);
+    }
+
 }
 

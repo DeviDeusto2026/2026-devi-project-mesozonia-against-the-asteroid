@@ -3,11 +3,9 @@ using UnityEngine;
 public class WalkState : IState
 {
     private Movement player;
-    private int i;
 
     public WalkState()
     {
-        i = 0;
     }
 
     public void Enter()
