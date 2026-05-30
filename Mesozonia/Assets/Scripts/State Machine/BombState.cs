@@ -8,7 +8,7 @@ public class BombState : IState
     }
     public void Enter()
     {
-        PlayerData.audioscript.playSFX(PlayerData.audioscript.falling);
+        PlayerData.audioscript.StartBombFall();
     }
 
     public void Update()
@@ -32,6 +32,6 @@ public class BombState : IState
 
     public void Exit()
     {
-
+        PlayerData.audioscript.StopBombFall();
     }
 }
