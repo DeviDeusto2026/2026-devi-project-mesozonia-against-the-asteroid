@@ -32,6 +32,8 @@ public class MenusBehavior : MonoBehaviour
     public void changeToOptionMenu()
     {
         SceneManager.LoadScene("OptionMenu");
+        Time.timeScale = 1;
+
     }
 
     public void changeToOptionMenu2()
@@ -42,6 +44,8 @@ public class MenusBehavior : MonoBehaviour
     public void changeToLevel()
     {
         SceneManager.LoadScene("Level");
+        Time.timeScale = 1;
+
     }
 
     public void QuitGame()
