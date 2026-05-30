@@ -22,7 +22,7 @@ public class ClimbState : IState
                             out hit))
         {
             direction = -hit.normal;
-            Debug.Log("The normal: " + direction);
+            //Debug.Log("The normal: " + direction);
         }
 
 
