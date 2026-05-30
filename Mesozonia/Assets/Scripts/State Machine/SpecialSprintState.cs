@@ -12,6 +12,7 @@ public class SpecialSprintState : IState
     {
         StaticStates.move.specialSpeedAchieved = StaticStates.move.specialSpeed;
         StaticStates.move.charges = 2;
+        PlayerData.audioscript.playSFX(PlayerData.audioscript.DBrelease);
     }
 
     public void Update()

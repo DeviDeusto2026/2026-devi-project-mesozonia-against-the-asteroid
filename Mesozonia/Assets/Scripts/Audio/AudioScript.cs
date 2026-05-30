@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.SpriteMask;
 
 public class AudioScript : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class AudioScript : MonoBehaviour
     public AudioClip music;
     public AudioClip piecesSFX;
     public AudioClip jumpSFX;
+    public AudioClip walkSFX;
+    public AudioClip runSFX;
+    public AudioClip buttonSFX;
+    public AudioClip DBcharge;
+    public AudioClip DBrelease;
 
 
     private void Start()
@@ -21,5 +27,36 @@ public class AudioScript : MonoBehaviour
 
     public void playSFX(AudioClip clip) { 
         SFXSource.PlayOneShot(clip);    
+    }
+
+    public void StartWalking()
+    {
+        if (!SFXSource.isPlaying)
+        {
+            SFXSource.clip = walkSFX;
+            SFXSource.loop = true;
+            SFXSource.Play();
+        }
+    }
+
+    public void StopWalking()
+    {
+        SFXSource.Stop();
+    }
+
+
+    public void StartRunning()
+    {
+        if (!SFXSource.isPlaying)
+        {
+            SFXSource.clip = runSFX;
+            SFXSource.loop = true;
+            SFXSource.Play();
+        }
+    }
+
+    public void StopRunning()
+    {
+        SFXSource.Stop();
     }
 }

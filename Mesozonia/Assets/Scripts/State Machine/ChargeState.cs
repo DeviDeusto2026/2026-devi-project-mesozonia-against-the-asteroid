@@ -12,6 +12,7 @@ public class ChargeState : IState
     {
         chargeTime = 3;
         StaticStates.move.specialSpeed = 10;
+        PlayerData.audioscript.playSFX(PlayerData.audioscript.DBcharge);
     }
 
     public void Update()

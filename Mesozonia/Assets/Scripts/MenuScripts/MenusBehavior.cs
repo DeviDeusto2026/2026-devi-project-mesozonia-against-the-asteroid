@@ -24,26 +24,31 @@ public class MenusBehavior : MonoBehaviour
 
     public void changeToMainMenu()
     {
+        PlayerData.audioscript.playSFX(PlayerData.audioscript.buttonSFX);
         SceneManager.LoadScene("StartMenu");
     }
 
     public void changeToOptionMenu()
     {
+        PlayerData.audioscript.playSFX(PlayerData.audioscript.buttonSFX);
         SceneManager.LoadScene("OptionMenu");
     }
 
     public void changeToOptionMenu2()
     {
+        PlayerData.audioscript.playSFX(PlayerData.audioscript.buttonSFX);
         SceneManager.LoadScene("OptionMenu2");
     }
 
     public void changeToLevel()
     {
+        PlayerData.audioscript.playSFX(PlayerData.audioscript.buttonSFX);
         SceneManager.LoadScene("Level");
     }
 
     public void QuitGame()
     {
+        PlayerData.audioscript.playSFX(PlayerData.audioscript.buttonSFX);
         Application.Quit();
 
         // Útil en el editor para probar el botón
