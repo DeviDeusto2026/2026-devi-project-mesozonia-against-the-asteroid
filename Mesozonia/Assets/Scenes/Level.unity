@@ -1893,7 +1893,7 @@ GameObject:
   - component: {fileID: 387359529}
   m_Layer: 0
   m_Name: GameStart
-  m_TagString: Untagged
+  m_TagString: Time
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3063,7 +3063,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.535
+  m_Volume: 0.29
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11236,6 +11236,7 @@ MonoBehaviour:
   SFXSource: {fileID: 1158547567}
   music: {fileID: 8300000, guid: 4a42b634d1f05e84cadd1c355d130537, type: 3}
   piecesSFX: {fileID: 8300000, guid: d3a9c1b10096d6846bf2caed81e28fb6, type: 3}
+  jumpSFX: {fileID: 8300000, guid: 040b75b5161cd40448a7fa3e0313c2e4, type: 3}
 --- !u!4 &2093284873
 Transform:
   m_ObjectHideFlags: 0

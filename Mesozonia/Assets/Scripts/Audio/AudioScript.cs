@@ -10,6 +10,7 @@ public class AudioScript : MonoBehaviour
     [Header("---Audio Clips---")]
     public AudioClip music;
     public AudioClip piecesSFX;
+    public AudioClip jumpSFX;
 
 
     private void Start()

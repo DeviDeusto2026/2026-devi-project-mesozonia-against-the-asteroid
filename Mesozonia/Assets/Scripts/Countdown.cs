@@ -8,7 +8,10 @@ public class Countdown : MonoBehaviour
     [SerializeField] Text countDownText;
 
     private float seconds = 60;
-    private float minutes = 10;
+    private float minutes = 9;
+
+    public float playerSeconds = 0;
+    public float playerMinutes = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,9 +25,11 @@ public class Countdown : MonoBehaviour
         if (seconds <= 0) {
             seconds = 60;
             minutes--;
+            playerMinutes++;
         }
 
         seconds -= Time.deltaTime;
+        playerSeconds += Time.deltaTime;
 
         int seconds2 = (int)seconds;
         countDownText.text = "TIME LEFT: " + minutes.ToString() + " : " + seconds2.ToString();

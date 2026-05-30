@@ -32,8 +32,23 @@ public class MenusBehavior : MonoBehaviour
         SceneManager.LoadScene("OptionMenu");
     }
 
+    public void changeToOptionMenu2()
+    {
+        SceneManager.LoadScene("OptionMenu2");
+    }
+
     public void changeToLevel()
     {
         SceneManager.LoadScene("Level");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+
+        // Útil en el editor para probar el botón
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }
