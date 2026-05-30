@@ -85,7 +85,7 @@ public class StartingOfScene : MonoBehaviour
 
             if(StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.FLY])
             {
-                StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
+                StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.IDLE]);
             }
         }
         else if(Eurhin.activeInHierarchy == true)

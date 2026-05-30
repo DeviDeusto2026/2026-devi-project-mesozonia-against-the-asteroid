@@ -27,7 +27,7 @@ public class FlyState : IState
 
         if (StaticStates.move.controller.isGrounded)
         {
-            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
+            StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.IDLE]);
         }
 
         if (StaticStates.move.fly.action.ReadValue<float>() == 0)
