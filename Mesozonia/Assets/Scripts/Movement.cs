@@ -43,7 +43,7 @@ public class Movement
         jumpHeight = 7;
         gravityValue = -14f;
         gravityValueFlying = -1f;
-        bombGravity = -20f;
+        bombGravity = -2000f;
 
         swimDownValue = -1500f;
         swimUpValue = +1500f;
