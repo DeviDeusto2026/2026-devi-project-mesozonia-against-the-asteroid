@@ -13,6 +13,7 @@ public class Movement
     public float jumpHeight;
     public float gravityValue;
     public float gravityValueFlying;
+    public float bombGravity;
 
     public float swimDownValue;
     public float swimUpValue;
@@ -42,6 +43,7 @@ public class Movement
         jumpHeight = 7;
         gravityValue = -14f;
         gravityValueFlying = -1f;
+        bombGravity = -20f;
 
         swimDownValue = -1500f;
         swimUpValue = +1500f;
