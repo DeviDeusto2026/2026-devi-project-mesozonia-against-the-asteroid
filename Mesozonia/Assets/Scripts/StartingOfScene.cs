@@ -46,8 +46,9 @@ public class StartingOfScene : MonoBehaviour
         inputReferences.Add(swimUp);
         inputReferences.Add(swimDown);
 
-
         StaticStates.InitializeStaticStates(playerNameFile, inputReferences, mainCamera, Drypto.GetComponent<Rigidbody>(), Tupan.GetComponent<Rigidbody>(), Eurhin.GetComponent<Rigidbody>());
+        PlayerData.piecesLeft = 3;
+
     }
 
     private void Update()

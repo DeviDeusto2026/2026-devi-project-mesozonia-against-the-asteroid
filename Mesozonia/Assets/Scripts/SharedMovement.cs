@@ -270,5 +270,10 @@ public class SharedMovement
         StaticStates.player.GetComponent<CharacterController>().Move(StaticStates.move.playerVelocity * Time.deltaTime);
     }
 
+    public static void applyBombGravity()
+    {
+        StaticStates.move.playerVelocity.y = StaticStates.move.bombGravity * Time.deltaTime;
+        StaticStates.player.GetComponent<CharacterController>().Move(StaticStates.move.playerVelocity * Time.deltaTime);
+    }
 }
 
