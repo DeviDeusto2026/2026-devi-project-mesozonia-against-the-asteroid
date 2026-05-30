@@ -10,8 +10,15 @@ public class CameraMovementV2 : MonoBehaviour
 
     float pivotX;
     float pivotY;
+
+    float pivotXGamepad;
+    float pivotYGamepad;
+    Vector2 minMovement;
+
     public GameObject cameraPivot;
     public InputActionReference recenterCamera;
+    public InputActionReference gamepadCamera;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,12 +29,31 @@ public class CameraMovementV2 : MonoBehaviour
         pivotX = cameraPivot.transform.rotation.x;
         pivotY = cameraPivot.transform.rotation.y;
 
+        pivotXGamepad = cameraPivot.transform.rotation.x;
+        pivotYGamepad = cameraPivot.transform.rotation.y;
+
+        minMovement = new Vector2(0.10f, 0.10f);
+
         recenterCamera.action.started += cameraRecenter;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //FOR GAMEPAD
+        if (gamepadCamera.action.ReadValue<Vector2>().x <= minMovement.x * -1 || gamepadCamera.action.ReadValue<Vector2>().y <= minMovement.y * -1 ||
+            gamepadCamera.action.ReadValue<Vector2>().x >= minMovement.x || gamepadCamera.action.ReadValue<Vector2>().y >= minMovement.y)
+        {
+            Vector2 cameraMovementGamepad = gamepadCamera.action.ReadValue<Vector2>();
+            Debug.Log(cameraMovementGamepad);
+            pivotXGamepad += cameraMovementGamepad.y * Time.deltaTime;
+            pivotXGamepad = Mathf.Clamp(pivotXGamepad, -Mathf.PI / 6.0f, Mathf.PI / 3.0f);
+            pivotYGamepad -= -cameraMovementGamepad.x * Time.deltaTime;
+            cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity *200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
+            
+        }
+
+        //FOR MOUSE
         if (mousePosition == Vector2.zero)
         {
             mousePosition = Mouse.current.position.ReadValue();
@@ -61,5 +87,8 @@ public class CameraMovementV2 : MonoBehaviour
         
         pivotX = cameraPivot.transform.rotation.x;
         pivotY = cameraPivot.transform.rotation.y;
+
+        pivotXGamepad = cameraPivot.transform.rotation.x;
+        pivotYGamepad = cameraPivot.transform.rotation.y;
     }
  }
