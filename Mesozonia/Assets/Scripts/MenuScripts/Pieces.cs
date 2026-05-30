@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Pieces : MonoBehaviour
 {
 
-    private int piecesLeft = 3;
     [SerializeField] Text pieceText;
 
     AudioScript audioscript;
@@ -19,7 +18,7 @@ public class Pieces : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        PlayerData.piecesLeft = 3;
     }
 
     // Update is called once per frame
@@ -34,14 +33,15 @@ public class Pieces : MonoBehaviour
         {
             audioscript.playSFX(audioscript.piecesSFX);
             Destroy(collision.gameObject);
-            piecesLeft--;
-            pieceText.text = "PIECES LEFT: " + piecesLeft;
+            PlayerData.piecesLeft--;
+            Debug.Log(PlayerData.piecesLeft);
+            pieceText.text = "PIECES LEFT: " + PlayerData.piecesLeft;
             checkPiecesLeft();
         }
     }
 
     private void checkPiecesLeft() {
-        if (piecesLeft == 0) {
+        if (PlayerData.piecesLeft == 0) {
             SceneManager.LoadScene("VictoryScene");
         }
     }

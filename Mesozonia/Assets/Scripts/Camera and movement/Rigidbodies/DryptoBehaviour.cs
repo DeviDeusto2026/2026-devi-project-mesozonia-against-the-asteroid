@@ -35,9 +35,9 @@ public class DryptoBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water") && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.FLOAT])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.FLOAT]);
 

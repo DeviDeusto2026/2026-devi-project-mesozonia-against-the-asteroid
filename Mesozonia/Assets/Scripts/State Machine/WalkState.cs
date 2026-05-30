@@ -10,7 +10,6 @@ public class WalkState : IState
 
     public void Enter()
     {
-        Debug.Log("Walk State Entrado");
     }
 
    public void Update()
@@ -25,6 +24,5 @@ public class WalkState : IState
 
     public void Exit()
     {
-        Debug.Log("Walkstate salido");
     }
 }
