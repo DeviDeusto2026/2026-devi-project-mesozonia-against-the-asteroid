@@ -76,4 +76,19 @@ public class AudioScript : MonoBehaviour
     {
         SFXSource.Stop();
     }
+
+    public void StartBombFall()
+    {
+        if (!SFXSource.isPlaying)
+        {
+            SFXSource.clip = falling;
+            SFXSource.loop = true;
+            SFXSource.Play();
+        }
+    }
+
+    public void StopBombFall()
+    {
+        SFXSource.Stop();
+    }
 }
