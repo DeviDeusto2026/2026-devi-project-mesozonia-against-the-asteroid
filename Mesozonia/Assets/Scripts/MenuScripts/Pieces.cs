@@ -9,6 +9,13 @@ public class Pieces : MonoBehaviour
     private int piecesLeft = 3;
     [SerializeField] Text pieceText;
 
+    AudioScript audioscript;
+
+    private void Awake()
+    {
+        audioscript = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioScript>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +32,7 @@ public class Pieces : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Piece"))
         {
+            audioscript.playSFX(audioscript.piecesSFX);
             Destroy(collision.gameObject);
             piecesLeft--;
             pieceText.text = "PIECES LEFT: " + piecesLeft;
