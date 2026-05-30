@@ -8,7 +8,7 @@ public class RunState : IState
     }
     public void Enter()
     {
-
+        PlayerData.audioscript.StartRunning();
     }
     public void Update()
     {
@@ -21,6 +21,6 @@ public class RunState : IState
     
     public void Exit()
     {
-
+        PlayerData.audioscript.StopRunning();
     }
 }

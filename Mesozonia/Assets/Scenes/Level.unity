@@ -3031,7 +3031,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.29
+  m_Volume: 0.126
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6370,7 +6370,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.273
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11782,6 +11782,11 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 4a42b634d1f05e84cadd1c355d130537, type: 3}
   piecesSFX: {fileID: 8300000, guid: d3a9c1b10096d6846bf2caed81e28fb6, type: 3}
   jumpSFX: {fileID: 8300000, guid: 040b75b5161cd40448a7fa3e0313c2e4, type: 3}
+  walkSFX: {fileID: 8300000, guid: 2415990fd537420459cf26cbfaead89c, type: 3}
+  runSFX: {fileID: 8300000, guid: c677c642a745f2f4ea93054579c41dc4, type: 3}
+  buttonSFX: {fileID: 8300000, guid: 8fb40c3b7bbbaf7468de17a065e5a77f, type: 3}
+  DBcharge: {fileID: 8300000, guid: 15b9964a4c7777244ad2f2d3a82e3f97, type: 3}
+  DBrelease: {fileID: 8300000, guid: 7df9411838c321649bd851912484cdc2, type: 3}
 --- !u!4 &2093284873
 Transform:
   m_ObjectHideFlags: 0

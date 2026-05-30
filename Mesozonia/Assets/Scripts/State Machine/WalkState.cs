@@ -10,10 +10,12 @@ public class WalkState : IState
 
     public void Enter()
     {
+        PlayerData.audioscript.StartWalking();
     }
 
    public void Update()
     {
+        
         SharedMovement.movementOfPlayer();
 
         if (StaticStates.move.movingDirection.action.ReadValue<Vector2>() == Vector2.zero)
@@ -24,5 +26,6 @@ public class WalkState : IState
 
     public void Exit()
     {
+        PlayerData.audioscript.StopWalking();
     }
 }
