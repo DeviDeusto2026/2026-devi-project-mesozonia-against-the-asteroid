@@ -11784,9 +11784,11 @@ MonoBehaviour:
   jumpSFX: {fileID: 8300000, guid: 040b75b5161cd40448a7fa3e0313c2e4, type: 3}
   walkSFX: {fileID: 8300000, guid: 2415990fd537420459cf26cbfaead89c, type: 3}
   runSFX: {fileID: 8300000, guid: c677c642a745f2f4ea93054579c41dc4, type: 3}
-  buttonSFX: {fileID: 8300000, guid: 8fb40c3b7bbbaf7468de17a065e5a77f, type: 3}
   DBcharge: {fileID: 8300000, guid: 15b9964a4c7777244ad2f2d3a82e3f97, type: 3}
   DBrelease: {fileID: 8300000, guid: 7df9411838c321649bd851912484cdc2, type: 3}
+  wingsflapping: {fileID: 8300000, guid: 34a1ba3fcdfca024fbcff0d79bc07127, type: 3}
+  falling: {fileID: 8300000, guid: 9852a766566ca6040be35f332f831ace, type: 3}
+  airJump: {fileID: 8300000, guid: de19ae67547259349998fd1f1f2a9193, type: 3}
 --- !u!4 &2093284873
 Transform:
   m_ObjectHideFlags: 0
