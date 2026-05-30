@@ -11,7 +11,7 @@ public class EurhinBehaviour : MonoBehaviour
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.WALK]);
         }
 
-        if(StaticStates.move.swimDown.action.ReadValue<float>() == 1 && StaticStates.move.controller.isGrounded == false)
+        if(StaticStates.move.swimDown.action.ReadValue<float>() == 1 && StaticStates.move.controller.isGrounded == false && StaticStates.stateMachine.GetState() != StaticStates.stateListMovement[(int)STATES.SWIM])
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.BOMB]);
         }

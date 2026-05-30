@@ -10,12 +10,13 @@ public class Countdown : MonoBehaviour
     private float seconds = 60;
     private float minutes = 9;
 
-    public float playerSeconds = 0;
-    public float playerMinutes = 0;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //countDown();
+        PlayerData.seconds = 0;
+        PlayerData.minutes = 0;
+
     }
 
     // Update is called once per frame
@@ -25,11 +26,11 @@ public class Countdown : MonoBehaviour
         if (seconds <= 0) {
             seconds = 60;
             minutes--;
-            playerMinutes++;
+            PlayerData.minutes++;
         }
 
         seconds -= Time.deltaTime;
-        playerSeconds += Time.deltaTime;
+        PlayerData.seconds += Time.deltaTime;
 
         int seconds2 = (int)seconds;
         countDownText.text = "TIME LEFT: " + minutes.ToString() + " : " + seconds2.ToString();

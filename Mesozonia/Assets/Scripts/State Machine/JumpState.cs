@@ -3,11 +3,8 @@ using UnityEngine;
 public class JumpState : IState
 {
 
-    AudioScript audioscript;
-
     private void Awake()
     {
-        audioscript = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioScript>();
     }
 
     public JumpState()
@@ -18,7 +15,7 @@ public class JumpState : IState
     {
         
         SharedMovement.jumpPlayer();
-        //audioscript.playSFX(audioscript.jumpSFX);
+        PlayerData.audioscript.playSFX(PlayerData.audioscript.jumpSFX);
     }
 
     public void Update()

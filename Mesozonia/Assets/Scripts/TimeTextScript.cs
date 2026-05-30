@@ -7,14 +7,15 @@ public class TimeTextScript : MonoBehaviour
     Countdown countdown;
     [SerializeField] Text timeText;
 
-    private void Awake()
-    {
-        countdown = GameObject.Find("Time").GetComponent<Countdown>();
-    }
+    //private void Awake()
+    //{
+    //    countdown = GameObject.Find("Time").GetComponent<Countdown>();
+    //}
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeText.text = "YOUR TIME: " + countdown.playerMinutes + ":" + countdown.playerSeconds;
+        int seconds2 = (int)PlayerData.seconds;
+        timeText.text = "YOUR TIME: " + PlayerData.minutes.ToString() + ":" + seconds2.ToString();
     }
 
     

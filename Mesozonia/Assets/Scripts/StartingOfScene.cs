@@ -22,7 +22,8 @@ public class StartingOfScene : MonoBehaviour
     public GameObject Drypto;
     public GameObject Tupan;
     public GameObject Eurhin;
-    private int currentCharacter = 0;
+
+    private AudioScript audioscript;
 
 
     private List<InputActionReference> inputReferences;
@@ -45,9 +46,11 @@ public class StartingOfScene : MonoBehaviour
         inputReferences.Add(fly);
         inputReferences.Add(swimUp);
         inputReferences.Add(swimDown);
+        audioscript = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioScript>();
 
         StaticStates.InitializeStaticStates(playerNameFile, inputReferences, mainCamera, Drypto.GetComponent<Rigidbody>(), Tupan.GetComponent<Rigidbody>(), Eurhin.GetComponent<Rigidbody>());
         PlayerData.piecesLeft = 3;
+        PlayerData.audioscript = audioscript;
 
     }
 
@@ -74,7 +77,6 @@ public class StartingOfScene : MonoBehaviour
         }
         else if(Tupan.activeInHierarchy == true)
         {
-            currentCharacter = 2;
             Tupan.SetActive(false);
             Eurhin.SetActive(true);
 
@@ -85,7 +87,6 @@ public class StartingOfScene : MonoBehaviour
         }
         else if(Eurhin.activeInHierarchy == true)
         {
-            currentCharacter = 0;
             Eurhin.SetActive(false);
             Drypto.SetActive(true);
         }
@@ -97,19 +98,16 @@ public class StartingOfScene : MonoBehaviour
 
         if (Drypto.activeInHierarchy == true)
         {
-            currentCharacter = 1;
             Drypto.SetActive(false);
             Eurhin.SetActive(true);
         }
         else if (Eurhin.activeInHierarchy == true)
         {
-            currentCharacter = 2;
             Eurhin.SetActive(false);
             Tupan.SetActive(true);
         }
         else if (Tupan.activeInHierarchy == true)
         {
-            currentCharacter = 0;
             Tupan.SetActive(false);
             Drypto.SetActive(true);
 
