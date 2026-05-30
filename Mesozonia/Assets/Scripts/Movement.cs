@@ -48,6 +48,7 @@ public class Movement
         swimDownValue = -1500f;
         swimUpValue = +1500f;
 
+        
         movingDirection = inputReferences[0];
         jump = inputReferences[1];
         sprint = inputReferences[2];
@@ -55,6 +56,7 @@ public class Movement
         fly = inputReferences[6];
         swimUp = inputReferences[7];
         swimDown = inputReferences[8];
+        
         controller = player.GetComponent<CharacterController>();
     }
 }

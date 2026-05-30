@@ -31,11 +31,14 @@ public class StartingOfScene : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         changeRight.action.started += changeRightAction;
         changeLeft.action.started += changeLeftAction;
         jump.action.started += jumpAction;
         sprint.action.started += sprintAction;
         specialSprint.action.started += specialSprintAction;
+        
+        
         inputReferences = new List<InputActionReference>();
         inputReferences.Add(movingDirection);
         inputReferences.Add(jump);
@@ -159,5 +162,14 @@ public class StartingOfScene : MonoBehaviour
             StaticStates.move.charges--;
             StaticStates.move.specialSpeed = StaticStates.move.specialSpeedAchieved;
         }
+    }
+
+    private void OnDestroy()
+    {
+        changeRight.action.started -= changeRightAction;
+        changeLeft.action.started -= changeLeftAction;
+        jump.action.started -= jumpAction;
+        sprint.action.started -= sprintAction;
+        specialSprint.action.started -= specialSprintAction;
     }
 }
