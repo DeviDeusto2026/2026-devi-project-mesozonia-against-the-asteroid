@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public static class StaticStates
 {
+    public static bool initialized = false;
     public static GameObject player;
     public static Movement move;
     public static StateMachine stateMachine;
@@ -22,6 +23,7 @@ public static class StaticStates
     public static void InitializeStaticStates(string playerGameObject,List<InputActionReference> inputReferences, GameObject camera, Rigidbody dryptoRb, Rigidbody tupanRb, Rigidbody eurhinRb)
     {
         player = GameObject.Find(playerGameObject);
+
         move = new Movement(player, inputReferences);
         stateListMovement = new List<IState>();
         stateListMovement.Add(new IdleState());
@@ -46,6 +48,8 @@ public static class StaticStates
         drypto = dryptoRb;
         tupan = tupanRb;
         eurhin = eurhinRb;
+
+        initialized = true;
     }
 }
 

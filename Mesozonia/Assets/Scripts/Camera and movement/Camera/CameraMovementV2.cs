@@ -139,8 +139,10 @@ public class CameraMovementV2 : MonoBehaviour
             cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity * 200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
         }
 
+    }
 
-
-
+    private void OnDestroy()
+    {
+        recenterCamera.action.started -= cameraRecenter;
     }
 }

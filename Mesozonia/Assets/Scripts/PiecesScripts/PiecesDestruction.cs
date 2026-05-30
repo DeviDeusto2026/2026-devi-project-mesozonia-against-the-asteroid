@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PiecesDestruction : MonoBehaviour
 {
@@ -15,9 +16,9 @@ public class PiecesDestruction : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        Destroy(this.gameObject);
+        SceneManager.LoadScene("GameOverScene");
     }
 
     

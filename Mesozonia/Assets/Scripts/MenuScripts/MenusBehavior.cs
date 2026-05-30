@@ -20,6 +20,8 @@ public class MenusBehavior : MonoBehaviour
     public void ContinueLevel()
     {
         panelOptions.SetActive(false);
+        Time.timeScale = 1;
+
     }
 
     public void changeToMainMenu()
