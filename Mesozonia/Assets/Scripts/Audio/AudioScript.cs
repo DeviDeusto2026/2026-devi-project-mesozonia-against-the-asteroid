@@ -14,9 +14,11 @@ public class AudioScript : MonoBehaviour
     public AudioClip jumpSFX;
     public AudioClip walkSFX;
     public AudioClip runSFX;
-    public AudioClip buttonSFX;
     public AudioClip DBcharge;
     public AudioClip DBrelease;
+    public AudioClip wingsflapping;
+    public AudioClip falling;
+    public AudioClip airJump;
 
 
     private void Start()
@@ -56,6 +58,21 @@ public class AudioScript : MonoBehaviour
     }
 
     public void StopRunning()
+    {
+        SFXSource.Stop();
+    }
+
+    public void StartFlying()
+    {
+        if (!SFXSource.isPlaying)
+        {
+            SFXSource.clip = wingsflapping;
+            SFXSource.loop = true;
+            SFXSource.Play();
+        }
+    }
+
+    public void StopFlying()
     {
         SFXSource.Stop();
     }

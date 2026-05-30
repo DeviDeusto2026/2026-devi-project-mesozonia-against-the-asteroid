@@ -135,6 +135,7 @@ public class StartingOfScene : MonoBehaviour
 
         if (StaticStates.move.flyCharges > 0 && StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.FLY])
         {
+            PlayerData.audioscript.playSFX(PlayerData.audioscript.airJump);
             Debug.Log(StaticStates.move.flyCharges);
             StaticStates.move.flyCharges--;
             SharedMovement.jumpPlayerAir();

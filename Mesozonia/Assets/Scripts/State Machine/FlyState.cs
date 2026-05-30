@@ -10,7 +10,7 @@ public class FlyState : IState
     public void Enter()
     {
         StaticStates.move.playerVelocity.y = 0;
-
+        PlayerData.audioscript.StartFlying();
     }
 
     public void Update()
@@ -38,6 +38,6 @@ public class FlyState : IState
 
     public void Exit()
     {
-
+        PlayerData.audioscript.StopFlying();
     }
 }
