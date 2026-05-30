@@ -6,13 +6,12 @@ using UnityEngine.SceneManagement;
 public class Pieces : MonoBehaviour
 {
 
-    private int piecesLeft = 3;
     [SerializeField] Text pieceText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        PlayerData.piecesLeft = 3;
     }
 
     // Update is called once per frame
@@ -26,14 +25,15 @@ public class Pieces : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Piece"))
         {
             Destroy(collision.gameObject);
-            piecesLeft--;
-            pieceText.text = "PIECES LEFT: " + piecesLeft;
+            PlayerData.piecesLeft--;
+            Debug.Log(PlayerData.piecesLeft);
+            pieceText.text = "PIECES LEFT: " + PlayerData.piecesLeft;
             checkPiecesLeft();
         }
     }
 
     private void checkPiecesLeft() {
-        if (piecesLeft == 0) {
+        if (PlayerData.piecesLeft == 0) {
             SceneManager.LoadScene("VictoryScene");
         }
     }

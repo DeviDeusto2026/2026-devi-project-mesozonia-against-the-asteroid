@@ -9,7 +9,6 @@ public class IdleState : IState
 
     public void Enter()
     {
-        Debug.Log("IdleState Entrado");
     }
 
     public void Update()
@@ -22,6 +21,5 @@ public class IdleState : IState
     }
     public void Exit()
     {
-        Debug.Log("IdleState Salido");
     }
 }

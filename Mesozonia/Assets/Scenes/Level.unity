@@ -4479,6 +4479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraMovementV2
   cameraPivot: {fileID: 153561433}
   recenterCamera: {fileID: -557077472380169699, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
+  gamepadCamera: {fileID: -5992553340773953003, guid: 84fe5a734e93e024881a3a9516aae134, type: 3}
 --- !u!1 &846045463
 GameObject:
   m_ObjectHideFlags: 0

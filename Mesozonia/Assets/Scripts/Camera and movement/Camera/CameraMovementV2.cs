@@ -32,7 +32,7 @@ public class CameraMovementV2 : MonoBehaviour
         pivotXGamepad = cameraPivot.transform.rotation.x;
         pivotYGamepad = cameraPivot.transform.rotation.y;
 
-        minMovement = new Vector2(0.10f, 0.10f);
+        minMovement = new Vector2(0.50f, 0.50f);
 
         recenterCamera.action.started += cameraRecenter;
     }
@@ -45,13 +45,12 @@ public class CameraMovementV2 : MonoBehaviour
             gamepadCamera.action.ReadValue<Vector2>().x >= minMovement.x || gamepadCamera.action.ReadValue<Vector2>().y >= minMovement.y)
         {
             Vector2 cameraMovementGamepad = gamepadCamera.action.ReadValue<Vector2>();
-            Debug.Log(cameraMovementGamepad);
             pivotXGamepad += cameraMovementGamepad.y * Time.deltaTime;
             pivotXGamepad = Mathf.Clamp(pivotXGamepad, -Mathf.PI / 6.0f, Mathf.PI / 3.0f);
             pivotYGamepad -= -cameraMovementGamepad.x * Time.deltaTime;
             cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity *200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
-            
         }
+        
 
         //FOR MOUSE
         if (mousePosition == Vector2.zero)
@@ -82,13 +81,66 @@ public class CameraMovementV2 : MonoBehaviour
 
     void cameraRecenter(InputAction.CallbackContext context)
     {
-        Debug.Log("Recentering");
-        cameraPivot.transform.rotation = StaticStates.modelLookingDirectionRotation;        
-        
-        pivotX = cameraPivot.transform.rotation.x;
-        pivotY = cameraPivot.transform.rotation.y;
+        cameraPivot.transform.rotation = StaticStates.modelLookingDirectionRotation;
 
-        pivotXGamepad = cameraPivot.transform.rotation.x;
-        pivotYGamepad = cameraPivot.transform.rotation.y;
+        pivotX = cameraPivot.transform.rotation.y;
+        pivotY = cameraPivot.transform.rotation.z;
+
+        
+
+        pivotXGamepad = 0;
+
+        if (StaticStates.move.movingDirection.action.ReadValue<Vector2>().y > minMovement.y && StaticStates.move.movingDirection.action.ReadValue<Vector2>().x > minMovement.x)
+        {
+
+            pivotYGamepad += Mathf.PI / 4;
+            cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity * 200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
+
+        }
+        else if (StaticStates.move.movingDirection.action.ReadValue<Vector2>().y > minMovement.y && StaticStates.move.movingDirection.action.ReadValue<Vector2>().x < -minMovement.x)
+        {
+
+            pivotYGamepad -= Mathf.PI / 4;
+            cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity * 200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
+
+        }
+        else if (StaticStates.move.movingDirection.action.ReadValue<Vector2>().y < -minMovement.y && StaticStates.move.movingDirection.action.ReadValue<Vector2>().x > minMovement.x)
+        {
+            pivotYGamepad += 3 * Mathf.PI / 4;
+            cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity * 200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
+
+        }
+        else if (StaticStates.move.movingDirection.action.ReadValue<Vector2>().y < -minMovement.y && StaticStates.move.movingDirection.action.ReadValue<Vector2>().x < -minMovement.x)
+        {
+
+            pivotY += 3 * Mathf.PI / 4;
+            pivotYGamepad -= 3 * Mathf.PI / 4;
+            cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity * 200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
+
+        }
+        else if (StaticStates.move.movingDirection.action.ReadValue<Vector2>().y < -minMovement.y)
+        {
+
+            pivotY += 3 * Mathf.PI / 4;
+            pivotYGamepad -= Mathf.PI;
+            cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity * 200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
+
+        }
+        else if (StaticStates.move.movingDirection.action.ReadValue<Vector2>().x < -minMovement.x)
+        {
+            pivotY += 3 * Mathf.PI / 4;
+            pivotYGamepad += 3 * Mathf.PI / 2;
+            cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity * 200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
+        }
+        else if (StaticStates.move.movingDirection.action.ReadValue<Vector2>().x > minMovement.x)
+        {
+            pivotY += 3 * Mathf.PI / 4;
+            pivotYGamepad += Mathf.PI / 2;
+            cameraPivot.transform.rotation = Quaternion.Euler(pivotXGamepad * mouseSensitivity * 200, pivotYGamepad * mouseSensitivity * 200, cameraPivot.transform.rotation.z);
+        }
+
+
+
+
     }
- }
+}

@@ -53,7 +53,7 @@ public class StartingOfScene : MonoBehaviour
     private void Update()
     {
         StaticStates.stateMachine.GetState().Update();
-        Debug.Log(StaticStates.stateMachine.GetState());
+        //Debug.Log(StaticStates.stateMachine.GetState());
 
         if (StaticStates.move.controller.isGrounded)
         {
@@ -66,13 +66,12 @@ public class StartingOfScene : MonoBehaviour
     {
         if (StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.SWIM]) return;
 
-        if (currentCharacter == 0)
+        if (Drypto.activeInHierarchy == true)
         {
-            currentCharacter = 1;
             Drypto.SetActive(false);
             Tupan.SetActive(true);
         }
-        else if(currentCharacter == 1)
+        else if(Tupan.activeInHierarchy == true)
         {
             currentCharacter = 2;
             Tupan.SetActive(false);
@@ -83,7 +82,7 @@ public class StartingOfScene : MonoBehaviour
                 StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.JUMP]);
             }
         }
-        else if(currentCharacter == 2)
+        else if(Eurhin.activeInHierarchy == true)
         {
             currentCharacter = 0;
             Eurhin.SetActive(false);
@@ -95,19 +94,19 @@ public class StartingOfScene : MonoBehaviour
     {
         if (StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.SWIM]) return;
 
-        if (currentCharacter == 0)
+        if (Drypto.activeInHierarchy == true)
         {
             currentCharacter = 1;
             Drypto.SetActive(false);
             Eurhin.SetActive(true);
         }
-        else if (currentCharacter == 1)
+        else if (Eurhin.activeInHierarchy == true)
         {
             currentCharacter = 2;
             Eurhin.SetActive(false);
             Tupan.SetActive(true);
         }
-        else if (currentCharacter == 2)
+        else if (Tupan.activeInHierarchy == true)
         {
             currentCharacter = 0;
             Tupan.SetActive(false);
@@ -150,7 +149,7 @@ public class StartingOfScene : MonoBehaviour
 
     void specialSprintAction(InputAction.CallbackContext context)
     {
-        if (StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.WALK] || StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.IDLE] || StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.RUN])
+        if ((StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.WALK] || StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.IDLE] || StaticStates.stateMachine.GetState() == StaticStates.stateListMovement[(int)STATES.RUN] ) && Drypto.activeInHierarchy == true)
         {
             StaticStates.stateMachine.ChangeState(StaticStates.stateListMovement[(int)STATES.CHARGE]);
         }
